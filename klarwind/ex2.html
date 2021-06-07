@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script>
+  $(function(){
+    var className =""  //변수를 선언한다.
+
+     $('.f_q_link').on({    //버튼을
+
+         click: function(){  //클릭했을때
+
+              className=$(this).parent().next().attr('class').slice(-2);
+              //보여줄 li의 class이름을 뒤에서 두자리(on)를 변수에 담는다.
+
+             if(className=='on'){  //만약 클래스명이 'on'이면
+
+                 $(this).parent().next().removeClass('on'); //class'on' 삭제
+
+                $(this).prev().children().eq(3).children()
+                .css({transform:'rotate(0deg)',transition:'all 0.4s',color:'#000'});
+                 //화살표 아이콘의 원래 css로 돌리기
+             }
+             else if(className!='on'){  //만약 클래스명이 'on'이 아니면
+
+                 $(this).parent().next().addClass('on');  //class'on' 추가
+
+                $(this).prev().children().eq(3).children()
+               .css({transform:'rotate(180deg)',transition:'all 0.4s',color:'#7070ea'});
+                // 화살표 아이콘 css 수정
+             }
+
+          }
+
+      });
+
+  });
+
+  </script>
+  <style>
+  *{padding:0;margin: 0;}
+          ul li{list-style: none;}
+          .clearfix:after{content: "";display: block;clear: both;}
+          h1{text-align: center;padding: 20px 0;}
+          .f_question1>ul>li,.f_answer1>ul>li{float: left;}
+          .fnq{width: 70%;line-height:300%;margin: 0 auto;}
+          .f_question1{position: relative}
+          .f_answer1{background: #eee;display: none;}
+          .f_answer1.on{display: block;}
+          .f_question1>ul>li:nth-child(1){width: 7%;text-align: center;}
+          .f_answer1>ul>li:nth-child(1){width: 7%;text-align: center;}
+          .f_question1>ul>li:nth-child(2){width: 13%;text-align: center;}
+          .f_question1>ul>li:nth-child(3){width:75%; }
+          .f_question1>ul>li:nth-child(4){width:5%; }
+          .f_q_link{width: 100%;height: 100%;position:absolute;top: 0;left: 0;}
+  </style>
+<body>
+  <h1>F&amp;A</h1>
+<ul class="fnq">
+  <li class="f_question1">
+      <ul class="clearfix">
+          <li>F</li>
+          <li>카테고리1</li>
+          <li>아코디언 메뉴는 어떻게 만드나요?</li>
+          <li><i class="fa fa-angle-double-up"></i></li>
+      </ul>
+      <a href="#" class="f_q_link"></a>
+  </li>
+  <li class="f_answer1">
+      <ul class="clearfix">
+          <li>A</li>
+          <li>그러게요.. 그거 어떻게 만드는건가요.. 그냥 갖다 쓰면 안되나요? 내가 굳이 만들어야 하나요? 휴.. 그래도 배웠으니 연습해야지ㅜ</li>
+          <li></li>
+      </ul>
+  </li>
+</ul>
+
+</body>
+</html>
