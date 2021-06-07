@@ -1137,7 +1137,7 @@ padding-right: 16%;}
 .Support_container .SuppoerWrap{position: absolute;;min-width: 992px;width: 1600px;left: 50%;transform: translateX(-50%);}
 
 .Support_container .SupportTab {position: absolute;padding-top: 13%;z-index: 4;}
-.Support_container .SupportTab h1{position: absolute;text-align: left;left: 2%;font-size: 42px;top: 23%;}
+.Support_container .SupportTab h1{position: absolute;text-align: left;left: 2%;font-size: 42px;top: 26%;}
 .Support_container .SupportTab .S_bar1{position: absolute;background: #000; width: 15px; height: 80px;}
 .Support_container .SupportTab li{float: left;width: 296px;margin-right: 30px;padding-top: 13%;}
 .Support_container .SupportTab li img{width: 296px;padding-bottom: 10%;}
