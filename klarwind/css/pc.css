@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.k300Sub
+.item1_txt
 
 h1{font-family: "notoB";}
 html{height: 100%;}
@@ -358,26 +358,29 @@ nav#navTop #topMenu li a:hover{color:#52aff6;}
 
 /* accordionMenu */
 /* .accordionMenu{display: flex;justify-content: center;align-items: center;} */
-ul{
-  list-style: none;
+.accordion_container{
+  position: relative;max-width: 1400px; min-width: 992px;height: 300px;
+  left: 50%;transform: translateX(-50%);
 }
+
 .accordion-menu .dropdownlink{
   padding: 5% 0;font-size:26px; color:#939292;
 }
 .accordion-menu {
-  position: absolute;right: 0;
+  position: absolute;width: 58%;right: 0;
   padding-top: 2%;height: 100%;
-  width: 48%;
+  list-style: none;
   margin: 60px 20px;
   background: #fff;
   border-radius: 4px;
 }
+
 .accordion-menu li.open .dropdownlink {
   color: #52aff6;
 }
 
 .down {
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
 }
 .accordion-menu li:last-child .dropdownlink {
   border-bottom: 0;
@@ -392,7 +395,7 @@ ul{
   position: relative;
   transition: all 0.4s ease-out;
 }
-.accordion-menu img{
+.dropdownlink img{
   position: absolute;
   width: 5%;
   top: 35px;
@@ -402,18 +405,14 @@ ul{
   left: auto;
 }
 .down_arrow{
-  transform: rotate(vertical);
+  /* transform: rotate(vertical); */
 }
 
 .submenuItems {
   display: none;
-  background: #C8E6C9;
-  li {
-    border-bottom: 1px solid #B6B6B6;
-  }
 }
 
-.submenuItems a {
+.submenuItems li {
   display: block;
   color: #727272;
   padding: 12px 12px 12px 45px;
@@ -423,6 +422,7 @@ ul{
     color: #fff;
   }
 }
+.submenuItems li>p{font-size: 18px;}
 
 /* body */
 .ProductSub_container{
@@ -461,7 +461,7 @@ ul{
 .subContent .menu4st .imgbox,
 .subContent .menu5st .imgbox
 {
-  width: 700px;float: left;
+  width: 40%;float: left;
   _box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.4);margin-right: 10px;
 }
 .subContent .menu1st h3,
@@ -508,8 +508,8 @@ ul{
 }
 
 /* SubContainer_2 */
-.k00img .product1,
-.k300Sub_2 .product2,
+.k00img .product1,.product1_500,.product_700,.product_500s,
+.k300Sub_2 .product2,.product2_500,.product2_500s,.product2_700,
 .k300Sub_3 .product3,
 .k300Sub_4 .product4,
 .k300Sub_6 .product6,
@@ -533,6 +533,9 @@ ul{
 .k00img{padding-top: 15%;height: 1300px;}
 .k00img>p{font-size: 34px;text-align: center;font-weight: bold;}
 .k00img .product1{background-image: url(../images/product0.jpg);}
+.k00img .product1_500{background-image: url(../images/product0_500.jpg);}
+.k00img .product_700{background-image: url(../images/product0_700.jpg);}
+.k00img .product_500s{background-image: url(../images/product0_500s.jpg);}
 
 .k300 .k300Sub li{float: left;width:245px;height: 160px;transition: 0.3s;}
 .k300 .k300Sub li:hover{transform: scale(1.2);}
@@ -552,6 +555,9 @@ ul{
 .k300Sub_2{width: 100%;height: 1120px;}
 .k300Sub_2 h1{padding-bottom: 4%;}
 .k300Sub_2 .product2{background-image: url(../images/product1.jpg);}
+.k300Sub_2 .product2_500{background-image: url(../images/product2_500.jpg);}
+.k300Sub_2 .product2_500s{background-image: url(../images/product2_500s.jpg);}
+.k300Sub_2 .product2_700{background-image: url(../images/product2_700.jpg);}
 
 .k300Sub_3{width: 100%;height: 1160px;}
 .k300Sub_3 h1{padding-bottom: 1.5%;}
@@ -652,6 +658,7 @@ ul{
 .k300Sub_9 img{width: 400px;height: 400px;}
 .k300Sub_9 h1{padding-bottom: 2%;}
 .p4{padding: 5% 0;}
+
 
 .k300Sub_9 h5{font-size: 22px; padding-bottom: 5%;}
 .k300Sub_9 .box-piesite ul{position: absolute;width: 1630px;left: 50%;transform: translateX(-50%);}
@@ -853,110 +860,6 @@ ul{
 
 
 
-/* AHAM */
- /* aham animation_k300 */
-.smoke_ani_1_1,
-.dust_ani_1_1,
-.pollen_ani_1_1{
-  height: 3px;width: 150px;background: #fff;
-  position: absolute;left: 50%; transform: translateX(-50%);
-}
-
-.ani_1,.ani_2,.ani_3{
-  position: absolute;left: 50%; transform: translateX(-50%);
-  width: 30px;height: 30px;border-radius: 15px;background:#fff;
-}
-.ani_1{
-  bottom: 0;
-  animation-name :ani_1;
-  animation-duration :2s;
-  animation-fill-mode:forwards;
-  animation-iteration-count:1;
-  animation-timing-function:ease;
-}
-@keyframes ani_1{
-  from{ bottom: 0; }
-  to{ bottom: 24%; }
-}
-.ani_2{
-  bottom: 0;
-  animation-name :ani_2;
-  animation-duration :3s;
-  animation-fill-mode:forwards;
-  animation-iteration-count:1;
-  animation-timing-function:ease;
-}
-@keyframes ani_2{
-  from{ bottom:0; }
-  to{ bottom: 28%; }
-}
-.ani_3{
-  bottom: 0;
-  animation-name :ani_3;
-  animation-duration :7s;
-  animation-fill-mode:forwards;
-  animation-iteration-count:1;
-  animation-timing-function:ease;
-}
-@keyframes ani_3{
-  from{ bottom: 0; }
-  to{ bottom: 27%; }
-}
-
-/* aham animation_k500 */
-.ani_1_500,.ani_2_500,.ani_3_500{
- position: absolute;left: 50%; transform: translateX(-50%);
- width: 30px;height: 30px;border-radius: 15px;background:#fff;_transition: 0.5s;
-}
-.ani_1_500{
- bottom: 0;
- animation-name :ani_1_500;
- animation-duration :2s;
- animation-fill-mode:forwards;
- animation-iteration-count:1;
- animation-timing-function:ease;
-}
-@keyframes ani_1_500{
- from{ bottom: 0; }
- to{ bottom: 28%; }
-}
-.ani_2_500{
- bottom: 0;
- animation-name :ani_2_500;
- animation-duration :3s;
- animation-fill-mode:forwards;
- animation-iteration-count:1;
- animation-timing-function:ease;
-}
-@keyframes ani_2_500{
- from{ bottom:0; }
- to{ bottom: 30%; }
-}
-.ani_3_500{
- bottom: 0;
- animation-name :ani_3_500;
- animation-duration :7s;
- animation-fill-mode:forwards;
- animation-iteration-count:1;
- animation-timing-function:ease;
-}
-@keyframes ani_3_500{
- from{ bottom: 0; }
- to{ bottom: 32%; }
-}
-
-
-
-.k300_footer{
-  position: absolute;left: 50%;transform: translateX(-50%);
-  width: 100%;top: 1250%;
-}
-.k300_footer h6{
-  position: absolute;left: 50%;transform: translateX(-50%);
-  width: 100vw; height: 1.5px; background: #797878;opacity: 0.3;
-}
-.k300_footer img{position: absolute;width: 150px;left: 50%;transform: translateX(-50%);padding-top: 2%;margin-bottom: 3%;}
-
 
 
 /* About */
@@ -1137,7 +1040,7 @@ padding-right: 16%;}
 .Support_container .SuppoerWrap{position: absolute;;min-width: 992px;width: 1600px;left: 50%;transform: translateX(-50%);}
 
 .Support_container .SupportTab {position: absolute;padding-top: 13%;z-index: 4;}
-.Support_container .SupportTab h1{position: absolute;text-align: left;left: 2%;font-size: 42px;top: 26%;}
+.Support_container .SupportTab h1{position: absolute;text-align: left;left: 2%;font-size: 42px;top: 23%;}
 .Support_container .SupportTab .S_bar1{position: absolute;background: #000; width: 15px; height: 80px;}
 .Support_container .SupportTab li{float: left;width: 296px;margin-right: 30px;padding-top: 13%;}
 .Support_container .SupportTab li img{width: 296px;padding-bottom: 10%;}
