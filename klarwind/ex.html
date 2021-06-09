@@ -20,263 +20,38 @@
   <script type="text/javascript" src="js/wow.min.js"></script>
   <script src="js/jquery.colorbox-min.js"></script>
 
-<script>
-var piesiteFired = 0;
-$(document).ready(function() {
-    var $win = $(window),
-        $win_height = $(window).height(),
-        // - A multiple of viewport height - The higher this number the sooner triggered.
-        windowPercentage = $(window).height() * 0.9;
-    $win.on("scroll", scrollReveal);
-    function scrollReveal() {
-        var scrolled = $win.scrollTop();
-
-$(".piesite").each(function() {
-           var $this = $(this),
-               offsetTop = $this.offset().top;
-           if (
-               scrolled + windowPercentage > offsetTop ||
-               $win_height > offsetTop
-           ) {
-               if (piesiteFired == 0) {
-                   timerSeconds = 3;
-                   timerFinish = new Date().getTime() + timerSeconds * 1000;
-                   $(".piesite").each(function(a) {
-                       pie = $("#pie_" + a).data("pie");
-                       timer = setInterval(
-                           "stoppie(" + a + ", " + pie + ")",
-                           0
-                       );
-                   });
-                   piesiteFired = 1;
-               }
-           } else {
-               // To keep them triggered, lose this block.
-               $(".piesite").each(function() {
-                   piesiteFired = 0;
-               });
-           }
-       });
-   }
-   scrollReveal();
-});
-
-
-
-///////////////////////////////////////
-//        The Radial Graphs
-///////////////////////////////////////
-
-// The following code is originally from the excellent pen:
-// https://codepen.io/StephenScaff/pen/VYaQGB by Stephen Scaff
-
-var timer;
-var timerFinish;
-var timerSeconds;
-
-function drawTimer(c, a) {
-   $("#pie_" + c).html(
-       '<div class="percent"></div><div id="slice"' +
-           (a > 225 ? ' class="gt50"' : "") +
-           '><div class="pie"></div>' +
-           (a > 225 ? '<div class="pie fill"></div>' : "") +
-           "</div>"
-   );
-   var b = 360 / 450 * a;
-   $("#pie_" + c + " #slice .pie").css({
-       "-moz-transform": "rotate(" + b + "deg)",
-       "-webkit-transform": "rotate(" + b + "deg)",
-       "-o-transform": "rotate(" + b + "deg)",
-       transform: "rotate(" + b + "deg)"
-   });
-   a = Math.floor(a * 450) / 450;
-   arr = a.toString().split(".");
-   intPart = arr[0];
-   $("#pie_" + c + " .percent").html(
-       '<span class="int">' +
-           intPart +
-           "</span>" +
-           '<span class="symbol">%</span>'
-   );
-}
-function stoppie(d, b) {
-   var c = (timerFinish - new Date().getTime()) / 1000;
-   var a = 450 - c / timerSeconds * 450;
-   a = Math.floor(a * 450) / 450;
-   if (a <= b) {
-       drawTimer(d, a);
-   } else {
-       b = $("#pie_" + d).data("pie");
-       arr = b.toString().split(".");
-       $("#pie_" + d + " .percent .int").html(arr[0]);
-   }
-}
-
-</script>
 <style>
-body {
-    background: #30303A;
-    font-family: 'Quicksand', sans-serif;
-    color: #ddd;
-}
-
-h1, h2, h3 {
-    text-align: center;
-}
-
-h1 {
-    margin: 100px auto 0;
-    color: #F0B015;
-}
-
-h2 {
-    margin: 20px auto 0;
-    font-size: 1.2em;
-}
-
-p {
-    margin: 5vw auto;
-    padding: 0 5vw;
-    line-height: 2em;
-    max-width: 60em;
-}
-
-
-.box-piesite {
-    text-align: center;
-    font-size: 22px;
-}
-
-.piesite {
-    position: relative;
-    width: 1em;
-    height: 1em;
-    font-size: 10em;
-    cursor: default;
-}
-
-.piesite .percent {
-    position: absolute;
-    top: 1.1em;
-    left: .1em;
-    width: 100%;
-    font-size: .3em;
-    text-align: center;
-    z-index: 2;
-    .symbol {
-        font-size: .5em;
-        vertical-align: top;
-        opacity: .5;
+<style>
+    /*
+      Rollover Image
+     */
+    .figure {
+        position: relative;
+        width: 360px; /* can be omitted for a regular non-lazy image */
+        max-width: 100%;
     }
-}
-
-.piesite > #slice {
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    clip: rect(0px, 1em, 1em, 0.5em);
-}
-
-.piesite > #slice.gt50 {
-    clip: rect(auto, auto, auto, auto);
-}
-
-.piesite > #slice > .pie {
-    position: absolute;
-    border: .1em solid #444;
-    width: 1em;
-    height: 1em;
-    clip: rect(0em, 0.5em, 1em, 0em);
-    border-radius: 0.5em;
-}
-
-li.design .piesite > #slice > .pie {
-    border-color: #49E;
-}
-
-li.usability .piesite > #slice > .pie {
-    border-color: #FFA500;
-}
-
-li.creativity .piesite > #slice > .pie {
-    border-color: #6B8E23;
-}
-
-.piesite > #slice > .pie.fill {
-    -webkit-transform: rotate(180deg) !important;
-    transform: rotate(180deg) !important;
-}
-
-.piesite.fill > .percent {
-    display: none;
-}
-
-.piesite:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: .1em;
-    left: .1em;
-    width: .8em;
-    height: .8em;
-    background: #30303A;
-    border-radius: 100%;
-    z-index: 1;
-}
-
-.piesite:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    border-radius: .5em;
-    opacity: .5;
-    z-index: 0;
-}
-
-.piesite:before {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.box-piesite ul {
-    padding: 0;
-    li {
-        display: inline-block;
-        margin: 10px 20px;
+    .figure img.image-hover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity .2s;
     }
-}
-
-.chartBarsHorizontal .chartBars .bars {
-    flex-direction: column;
-}
-
-@media screen and (min-width: 600px) {
-    .bar:before {
-        font-size: 2em !important;
+    .figure:hover img.image-hover {
+      opacity: 1;
     }
-    .chartBars3 .bar:before {
-        font-size: 1.5em !important;
-    }
-}
 </style>
-  <html>
-    <body>
-      <h3>Radial Graphs</h3>
 
-  <div class="box-piesite">
-      <ul>
-          <li class="design">
-              <div class="piesite" id="pie_0" data-pie="267"></div>
-          </li>
-          <li class="usability">
-              <div class="piesite" id="pie_2" data-pie="304"></div>
-          </li>
-          <li class="creativity">
-              <div class="piesite" id="pie_1" data-pie="361"></div>
-          </li>
-      </ul>
-  </div>
+</style>
+<body>
+  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+<div class="figure">
+  <img class="Sirv image-main" src="https://demo.sirv.com/hc/Bose-700-a.jpg?w=10&colorize.color=efefef" data-src="https://demo.sirv.com/hc/Bose-700-a.jpg">
+  <img class="Sirv image-hover" data-src="https://demo.sirv.com/hc/Bose-700-b.jpg">
+</div>
 
 </body>
 </html>

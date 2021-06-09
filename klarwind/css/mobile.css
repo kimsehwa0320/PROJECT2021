@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 html,body{ height: 100%;width: 100%;font-family: Arial;}
-body{font-family: "notoR";}
-h1{font-family: "notoB";}
+body{font-family: 'Noto Sans', sans-serif;}
+h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 
 .section.page1 aside,
 .section.page1 .blind_pc,
