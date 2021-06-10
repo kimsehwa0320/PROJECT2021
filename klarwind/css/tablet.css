@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 html,body{ height: 100%;width: 100%;font-family: Arial;}
-body{font-family: 'Noto Sans', sans-serif;}
+body{font-family: 'Noto Sans', sans-serif; max-width: 991px;min-width: 557px;}
 h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 
 .section.page1 aside,
@@ -10,7 +10,8 @@ h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 .section.page3 .blind_pc,
 .section.page4 .blind_pc,
 .aboutContainer .blind_pc,
-#main_menu .blind_pc
+#main_menu .blind_pc,
+.msinSlide .blind_pc
 {display: none;}
 
 .header_top h1{float: left;}
@@ -82,37 +83,49 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   -webkit-background-size: cover;
   background-size: cover;
 }
-.section.page1{background: #000;}
-.section.page1_mobile{background-image: url(../images/k_banner_one_m.jpg);}
 .section.page3{}
 .section.page4{}
 .section.page5{}
 
 
 /* section.page1*/
-.section.page1 .page1_left{position: absolute;top: 0;left: 50%;transform: translateX(-50%);}
-.section.page1_mobile .page1_right{
-  position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);
+.section.page1,.section.page2{
+  position: relative;width: 100%;
+  left: 50%;transform: translateX(-50%);
 }
-.section.page1_mobile .K_Slogan{
-  width: 350px; height: 400px;
-  background: #fff;padding: 15%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+.section.page1 h1{
+  position: absolute;font-size: 100px;letter-spacing: -1px;margin: 0 auto;bottom: 0;padding-left: 2%;padding-top: 1%;
 }
-.section.page1_mobile .K_Slogan p{
-  color:#000;letter-spacing: -1px; padding: 10px;
-  font-size:20px; text-align:left;
-}
-.section.page1_mobile .main.one{
-  position: absolute;
+.section.page1 .sliderWrap{
+  position: absolute; width: 100%; height: 100%;font-weight: bold;top: 0;
+  overflow: auto;letter-spacing: -2px;margin: 0 auto;top: 10%;
 }
 
-.section.page1_mobile .vWrap a{
-  position: absolute;font-weight: bold;
-  line-height:40px; letter-spacing:-1px ;
-  color:#007cd3; transition:0.3s;font-size:22px;
+.section.page1 .sliderWrap li img{display: block;margin: 0 auto;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);width: 95%;}
+.mainTxt1,.mainTxt2,.mainTxt3{position: absolute;transform: translate(-50%,-50%);}
+.section.page1 .sliderWrap li .mainTxt1{left: 41%;top: 47%;}
+.section.page1 .sliderWrap li .mainTxt2{right: -10%;top: 45%;text-align: right;}
+.section.page1 .sliderWrap li .mainTxt3{left: 70%;top: 40%;color: #fff;}
+
+.section.page1 .sliderWrap li p{font-size: 28px;}
+.section.page1 .sliderWrap li h3{font-size: 42px;width: 100%;color:#52aff6;}
+.section.page1 .sliderWrap li .mainh3{font-size: 42px;width: 100%;color:#52aff6;}
+
+.section.page1 .go{position: absolute;right: 4%; bottom: 13%;}
+.section.page1 .vWrap a{
+  letter-spacing:-1px ;position: absolute;font-size: 18px;padding: 25px 0 10px 15px;
+  color:#52aff6;text-align: center;transition:0.6s;font-weight:bold;
 }
-.section.page1_mobile .vWrap a:hover{font-weight: bold;font-size:26px; }
+.scroll{}
+.vWrap_bg{
+  background: #000;
+  width: 110px; height: 110px;border-radius:55px;transition:0.4s;
+}
+.section.page1 .go:hover .vWrap_bg{
+  transform: rotate(180deg);
+  border: 5px solid #52aff6;
+}
+.section.page1 .go:hover .vWrap a{transform: scale(1.1);z-index: 8;}
 
 /* section.page2 animation*/
 #onView1st{top: -700px;transition:0.5s;}
@@ -139,7 +152,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 /* .section.page2  */
 .section.page2 .page2_slide1,.section.page2 .page2_slide2{
-  min-width: 557px;max-width: 991px;text-align: center;position: relative;color:#fff;
+  min-width: 360px;max-width: 991px;text-align: center;position: relative;color:#fff;
 }
 
 
@@ -185,7 +198,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 
 /* .section.page3  */
-.section.page3{position: relative;min-width: 557px;max-width: 991px;}
+.section.page3{position: relative;min-width: 367px;max-width: 991px;}
 
 .section.page3 .page3_t1{
   position: absolute; font-size: 42px; font-weight: bold;
@@ -241,11 +254,11 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 
 /* .section.page4 */
-.section.page4{min-width: 557px;}
-.section.page4 img, .section.page4 #klarwind4_video{vertical-align: middle;}
-.section.page4 .container {position: relative;}
+.section.page4{position: relative;width: 100%;}
+.section.page4 img{width: 50%;display: block;margin: 0 auto;}
+.section.page4 #klarwind4_video{vertical-align: middle;height: 100vh;}
+.section.page4 .container {position: absolute;left: 50%;transform: translateX(-50%);}
 .section.page4 .row{display: none;}
-.section.page4 .section.page4 .cursor {cursor: pointer;}
 .section.page4 .prev,
 .next {
   transition: 0.3s;
@@ -665,8 +678,7 @@ input[type=submit]:hover {
 
 
 .scroll{
-  position: absolute; bottom: 20px; left: 50%;
-  transform:translateX(-50%);
+  position: absolute; bottom:10%; right: 9%;
   animation-name:xScroll;
   animation-duration:0.8s;
   animation-iteration-count:infinite;

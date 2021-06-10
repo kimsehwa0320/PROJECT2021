@@ -19,38 +19,57 @@
   <script src="js/wow.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
   <script src="js/jquery.colorbox-min.js"></script>
-
 <style>
-<style>
-    /*
-      Rollover Image
-     */
-    .figure {
-        position: relative;
-        width: 360px; /* can be omitted for a regular non-lazy image */
-        max-width: 100%;
-    }
-    .figure img.image-hover {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      object-fit: contain;
-      opacity: 0;
-      transition: opacity .2s;
-    }
-    .figure:hover img.image-hover {
-      opacity: 1;
-    }
-</style>
+.layer1 {
+  position: absolute;width: 58%;right: 0;
+  padding-top: 2%;height: 100%;
+  list-style: none;
+  margin: 60px 20px;
+  background: #fff;
+  border-radius: 4px;
+}
 
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:#c30;
+}
+.content {
+  padding: 2% 0;
+  font-size: 24px;
+}
+.accordion_container{
+  position: relative;max-width: 1400px;height: 300px;
+  left: 50%;transform: translateX(-50%);}
+p { padding: 4% 0;font-size:28px; color:#626262;font-weight: 400; }
 </style>
+<script>
+$(document).ready(function() {
+  $(".content").hide();
+  //content 클래스를 가진 div를 표시/숨김(토글)
+  $(".heading").click(function()
+  {
+    $(this).next(".content").slideToggle(500);
+  });
+});
+
+</script>
 <body>
-  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
-<div class="figure">
-  <img class="Sirv image-main" src="https://demo.sirv.com/hc/Bose-700-a.jpg?w=10&colorize.color=efefef" data-src="https://demo.sirv.com/hc/Bose-700-a.jpg">
-  <img class="Sirv image-hover" data-src="https://demo.sirv.com/hc/Bose-700-b.jpg">
+<div class="accordion_container">
+  <div class="layer1">
+  <p class="heading">제목 1 </p>
+  <div class="content">첫 번째 컨텐츠<br>첫 번째 컨텐츠</div>
+  <p class="heading">제목 2</p>
+  <div class="content">두 번째 컨텐츠<br>두 번째 컨텐츠</div>
+  <p class="heading">제목 3</p>
+  <div class="content">세 번째 컨텐츠<br>세 번째 컨텐츠</div>
+  </div>
+  <div> kkkkkk</div>
+  <div> kkkkkk</div>
+  <div> kkkkkk</div>
 </div>
 
 </body>
