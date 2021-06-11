@@ -147,9 +147,9 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 #onView5st{left:-100%;transition:0.5s;}
 #onView5st.move{left:3%;}
 #onView3st{right: -100%;transition:0.5s}
-#onView3st.move{right: 6%;}
+#onView3st.move{right: 7%;}
 #onView4st{right: -100%;transition:0.5s}
-#onView4st.move{right: 6%;}
+#onView4st.move{right: 7%;}
 
 #onView7st{opacity: 0;transition:1s}
 #onView7st.move{opacity: 1;}
@@ -321,6 +321,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 /* .section.page5 */
 .section.page6 .container6{min-width: 557px; max-width: 991px; position: relative;left: 50%;transform: translateX(-50%);}
 .section.page6 .page6_column{overflow: hidden;}
+.section.page6 .page6_column img{padding: 3%;}
 .section.page6 .page6_column img:hover{
   box-shadow: 0 0 7px 1px #007cd3;
   border: 1px solid #007cd3; /* Gray border */
