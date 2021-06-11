@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/fullpage.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/colorbox.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.fullPage.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/wow.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script src="js/jquery.colorbox-min.js"></script>
+<style>
+.layer1 {
+  position: absolute;width: 58%;right: 0;
+  padding-top: 2%;height: 100%;
+  list-style: none;
+  margin: 60px 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:#c30;
+}
+.content {
+  padding: 2% 0;
+  font-size: 24px;
+}
+.accordion_container{
+  position: relative;max-width: 1400px;height: 300px;
+  left: 50%;transform: translateX(-50%);}
+p { padding: 4% 0;font-size:28px; color:#626262;font-weight: 400; }
+</style>
+<script>
+$(document).ready(function() {
+  $(".content").hide();
+  //content 클래스를 가진 div를 표시/숨김(토글)
+  $(".heading").click(function()
+  {
+    $(this).next(".content").slideToggle(500);
+  });
+});
+
+</script>
+<body>
+<div class="accordion_container">
+  <div class="layer1">
+  <p class="heading">제목 1 </p>
+  <div class="content">첫 번째 컨텐츠<br>첫 번째 컨텐츠</div>
+  <p class="heading">제목 2</p>
+  <div class="content">두 번째 컨텐츠<br>두 번째 컨텐츠</div>
+  <p class="heading">제목 3</p>
+  <div class="content">세 번째 컨텐츠<br>세 번째 컨텐츠</div>
+  </div>
+  <div> kkkkkk</div>
+  <div> kkkkkk</div>
+  <div> kkkkkk</div>
+</div>
+
+</body>
+</html>
+
+
+
+<!-- <li class="k300Sub_9">
+  <h1>Certified and Awarded product</h1>
+  <h3>
+    AHAM verified
+  </h3>
+  <ul class="clearfix">
+    <li>
+      <img src="images/aham300.jpg" alt="">
+    </li>
+    <li class="smoke_ani">
+          <h1>SMOKE</h1>
+          <h3 class="number">276</h3>
+          <ul class="clearfix">
+            <li>0</li>
+            <li>
+              <div class="smoke_ani_1_1">
+                <div class="ani_1"></div>
+              </div>
+            </li>
+            <li>450</li>
+          </ul>
+    </li>
+      <li class="dust_ani">
+          <h1>DUST</h1>
+          <h3 class="number">304</h3>
+          <p class="pt">400</p>
+          <div class="dust_ani_1_1">
+            <div class="ani_2"></div>
+          </div>
+          <p>0</p>
+      </li>
+      <li class="pollen_ani">
+          <h1>POLLEN</h1>
+          <h3 class="number">361</h3>
+          <p class="pt">450</p>
+          <div class="pollen_ani_1_1">
+            <div class="ani_3"></div>
+          </div>
+          <p>0</p>
+      </li>
+    </li>
+  </ul>
+</li> -->
