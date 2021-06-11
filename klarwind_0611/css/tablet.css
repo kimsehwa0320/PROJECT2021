@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 html,body{ height: 100%;width: 100%;font-family: Arial;}
-body{font-family: 'Noto Sans', sans-serif; min-width: 557px;max-width: 991px;}
+body{font-family: 'Noto Sans', sans-serif; min-width: 557px;max-width: 991px;height: 100%;}
 h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 
 .section.page1 aside,

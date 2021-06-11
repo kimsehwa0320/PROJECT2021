@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 html,body{ height: 100%;width: 100%;font-family: Arial;}
-body{font-family: 'Noto Sans', sans-serif;}
+body{font-family: 'Noto Sans', sans-serif;max-width: 557px; height: 100%;}
 h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 
 .section.page1 aside,
@@ -138,23 +138,11 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 #onView5st{left:-100%;transition:0.5s;}
 #onView5st.move{left:3%;}
-/* #onView3st{right: -100%;transition:0.5s}
-#onView3st.move{right: 20%;}
-#onView4st{right: -100%;transition:0.5s}
-#onView4st.move{right: 20%;} */
 
-#onView7st{opacity: 0;transition:1s}
-#onView7st.move{opacity: 1;}
-#onView8st{opacity: 0;transition:2s}
-#onView8st.move{opacity: 1;}
-#onView9st{opacity: 0;transition:3s}
-#onView9st.move{opacity: 1;}
-#onView10st{opacity: 0;transition:4s}
-#onView10st.move{opacity: 1;}
 
 /* .section.page2  */
 .section.page2 .page2_slide1,.section.page2 .page2_slide2{
-  max-width: 556px;position: relative;text-align: center;color:#fff;
+  max-width: 557px;position: relative;text-align: center;color:#fff;
 }
 
 
@@ -169,10 +157,10 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   display:flex;justify-content: center;align-items:center;
 }
 .section.page2 .view1st>div,.section.page2 .view2st>div{
- width:300px;position: absolute;top: 40%;
+ width:300px;position: absolute;top: 23%;
 }
-.section.page2 .page2_slide1 h1{font-size: 42px;padding-bottom: 5%;}
-.section.page2 .page2_slide1 p{line-height: 20px; font-size: 14px;padding-bottom: 10%;}
+.section.page2 .page2_slide1 h1,.section.page2 .page2_slide2 h1{font-size: 42px;padding-bottom: 5%;}
+.section.page2 .page2_slide1 p,.section.page2 .page2_slide2 p{line-height: 30px; font-size: 18px;padding-bottom: 15%;}
 .section.page2 .page2_slide1 a{
   background: #52aff6; padding: 15px 20px;
   color:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -184,8 +172,6 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 }
 .section.page2 .page2_slide1 img{display: none;}
 
-.section.page2 .page2_slide2 h1{font-size: 42px;padding-bottom: 5%;}
-.section.page2 .page2_slide2 p{line-height: 20px; font-size: 14px;padding-bottom: 10%;}
 .section.page2 .page2_slide2 a{
   background: #52aff6; padding: 15px 20px;
   color:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -346,16 +332,6 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   transition: 0.3s;cursor: pointer;
 }
 
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-/* @media screen and (max-width: 600px) {
-  .page6_column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-} */
-
 @media screen and (max-width: 991px) {
   .page6_column {
     -ms-flex: 50%;
@@ -363,9 +339,6 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
     max-width: 50%;
   }
 }
-
-
-
 
 /* .section.page6 */
 .section.page5{background: #000;color:#fff;width: 100%;
@@ -377,19 +350,22 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 }
 .section.page5 h1{
   position: absolute; left: 50%;transform: translateX(-50%);top: 17%;
-  font-size: 16px; font-weight: bold; z-index: 15;text-align: center;width: 100%;
+  font-size: 22px; font-weight: bold; z-index: 15;text-align: center;width: 100%;
 }
 .section.page5 .mark{
-  position: absolute;top: 17%;width: 100%;left: 50%;transform: translateX(-50%);top: 25%;
+  position: absolute;left: 50%;transform: translateX(-50%);top: 30%;
+  justify-content: center;align-items: center;
 }
+.mark li{float: left;width: 45%;margin-right: 5%;}
+.mark li:last-child{margin-right: 0;}
 .section.page5 .mark1,.mark2,.mark3,.mark4{padding-bottom: 5%;}
-.section.page5 img{width: 20%;padding-left: 5%;padding-bottom: 1%;}
-.section.page5 h3{font-size: 9px;padding:  0 7%;padding-bottom: 1%;}
-.section.page5 p{font-size: 6px;font-weight: lighter;padding: 0 7%;}
+.section.page5 img{width: 100%;padding-bottom: 1%;}
+.section.page5 h3{font-size: 12px;padding:  0 7%;padding-bottom: 1%;}
+.section.page5 p{display: none;}
 
 
 /* About */
-.About_container{position: relative;max-width: 556px; height: 100%;left: 50%;transform: translateX(-50%);}
+.About_container{position: relative;max-width: 557px; height: 100%;left: 50%;transform: translateX(-50%);}
 .About_container .aboutContainer{position: absolute;left: 50%;max-width: 556px;height: 100vh;transform: translateX(-50%);}
 .About_container .about_bg1{
   position: absolute; left: 50%;transform: translateX(-50%);
