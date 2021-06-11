@@ -177,7 +177,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   display:flex;justify-content: center;align-items:center;
 }
 .section.page2 .view1st>div,.section.page2 .view2st>div{
- width:500px;position: absolute;top: 15%;
+ width:500px;position: absolute;top: 20%;
 }
 .section.page2 .page2_slide1 h1{font-size: 62px;padding-bottom: 5%;padding-top: 10%;}
 .section.page2 .page2_slide1 p{line-height: 30px; font-size: 18px;padding-bottom: 10%;}
