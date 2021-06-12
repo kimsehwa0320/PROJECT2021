@@ -242,7 +242,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 .section.page4 img{padding-top: 3%;}
 .section.page4 .klarwind300 {text-align: center;width: 100%;}
 .section.page4 .klarwind300 h1{font-size: 26px;}
-.section.page4 .klarwind300 p{font-size: 22px;padding: 2% 15% 10% 15%;}
+.section.page4 .klarwind300 p{font-size: 18px;padding: 2% 15% 10% 15%;}
 .klarwind300 a{
   background: #52aff6; padding: 15px 20px;
   color:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -293,7 +293,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 /* .section.page5 */
 .section.page6 .container6{
-  max-width: 557px;height: 100%;padding:7%;
+  max-width: 557px;height: 100%;padding: 15% 5% 2% 5%;
   position: relative;left: 50%;transform: translateX(-50%);
 }
 .section.page6 .page6_column{overflow: hidden;}
@@ -309,13 +309,15 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   text-align: center;
   padding-bottom: 20px;
 }
+.page6_header h1{font-size: 26px;}
+.page6_header p{font-size: 14px;}
+
 
 .page6_row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  padding-right: 5px;
 }
 #page6_img2,#page6_img6{padding-right:0;}
 
