@@ -310,7 +310,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 /* .section.page5 */
 .section.page6 .container6{
-  min-width: 557px; max-width: 991px; height: 100%;padding: 10% 2% 5% 2%;
+  min-width: 557px; max-width: 991px; height: 100%;padding:7%;
   position: relative;left: 50%;transform: translateX(-50%);
 }
 .section.page6 .page6_column{overflow: hidden;}
@@ -327,7 +327,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   padding-bottom: 20px;
 }
 .page6C2{display: none;}
-.page6C4 img{height: 242.85px;}
+.page6C4 img{height: 200.38px;}
 .page6_row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
