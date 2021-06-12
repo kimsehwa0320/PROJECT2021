@@ -199,7 +199,7 @@ nav#navTop #topMenu li:nth-child(5) a:hover{color:#52aff6;}
 
 /* .section.page4 */
 .section.page4 img, .section.page4 #klarwind4_video{vertical-align: middle;width: 100%;height: 100%;}
-.section.page4 .container4 {position: relative;width: 100%;padding-top: 6%;}
+.section.page4 .container4 {position: relative;width: 100%;}
 .section.page4 .mySlides {display: none;}
 .section.page4 .section.page4 .cursor {cursor: pointer;}
 .section.page4 .prev,
@@ -226,11 +226,7 @@ nav#navTop #topMenu li:nth-child(5) a:hover{color:#52aff6;}
   color: #52aff6;
 }
 .section.page4 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+  display: none;
 }
 .section.page4 .caption-container {
   text-align: center;
@@ -286,7 +282,7 @@ nav#navTop #topMenu li:nth-child(5) a:hover{color:#52aff6;}
   flex-wrap: wrap;
   margin-right: 5px;
 }
-#page6_img5,#page6_img6{padding-right: none;}
+#page6_img5,#page6_img6{padding-right: 0;}
 .page6_column {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
