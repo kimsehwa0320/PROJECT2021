@@ -527,8 +527,8 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 }
 .Support_banner h1,.Support_banner p{max-width: 556px;position: absolute;left: 50%;transform: translateX(-50%);}
 .Support_banner h1, .Support_banner p{margin-left: 2%;}
-.Support_banner h1{font-size: 36px;top:4.6%;letter-spacing: -3px;}
-.Support_banner p{font-size: 18px;top: 6%;letter-spacing: -1px;}
+.Support_banner h1{font-size: 36px;top:4.5%;letter-spacing: -3px;}
+.Support_banner p{font-size: 16px;top: 5.6%;letter-spacing: -1px;}
 .Support_banner img{display: none;}
 
 
