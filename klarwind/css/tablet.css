@@ -267,6 +267,18 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 .section.page4{position: relative;width: 100%;}
 .section.page4 #klarwind4_video{vertical-align: middle;height: 100vh;}
 .section.page4 .container {position: absolute;left: 50%;transform: translateX(-50%);}
+.section.page4 img{padding-top: 3%;}
+.section.page4 .klarwind300 {text-align: center;width: 100%;}
+.section.page4 .klarwind300 h1{font-size: 36px;}
+.section.page4 .klarwind300 p{font-size: 26px;padding: 0 15% 5% 15%;}
+.klarwind300 a{
+  background: #52aff6; padding: 15px 25px;font-size: 26px;
+  color:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+.klarwind300 a:hover{
+  background: #fff;color:#52aff6;border: 1px solid  #52aff6;
+}
 
 .section.page4 .row{display: none;}
 .section.page4 .prev,
