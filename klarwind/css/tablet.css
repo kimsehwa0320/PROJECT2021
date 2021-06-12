@@ -526,13 +526,13 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 }
 .about_footer{
   position: absolute;left: 50%;transform: translateX(-50%);
-  width: 100%;padding-top: 1570%;
+  width: 100%;padding-top: 1550%;
 }
 .about_footer h6{
   position: absolute;left: 50%;transform: translateX(-50%);
   width: 100vw; height: 1.5px; background: #797878;opacity: 0.3;
 }
-.about_footer img{position: absolute;width: 150px;left: 50%;transform: translateX(-50%);padding-top: 1%;margin-bottom: 1%;}
+.about_footer img{position: absolute;width: 100px;left: 50%;transform: translateX(-50%);padding-top: 1%;margin-bottom: 1%;}
 
 /* SUPPORT */
 .Support_container{
@@ -645,7 +645,7 @@ input[type=submit]:hover {
   position: absolute;left: 50%;transform: translateX(-50%);
   width: 100vw; height: 1.5px; background: #797878;opacity: 0.3;
 }
-.support_footer img{position: absolute;width: 150px;left: 50%;transform: translateX(-50%);padding-top: 1%;margin-bottom: 1%;}
+.support_footer img{position: absolute;width: 100px;left: 50%;transform: translateX(-50%);padding-top: 1%;margin-bottom: 1%;}
 
 
 
