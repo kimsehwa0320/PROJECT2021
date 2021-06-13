@@ -199,13 +199,12 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   margin: 0 auto;padding: 10%;
 }
 .section.page3 .click{
-  background: #52aff6; padding: 15px 20px;width: 50%;
+  background: #52aff6; padding: 10px 15px;width: 50%;
   color:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;text-align: center;
 }
 .section.page3 .click:hover{
-  background: #fff; padding: 15px 20px; color:#52aff6;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  background: #fff;color:#52aff6;
 }
 
 .whyTxt {
