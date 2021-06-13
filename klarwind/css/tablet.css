@@ -237,6 +237,7 @@ position: relative;
 padding: 3% 0;
 font-size: 24px;
 text-align: left;
+-webkit-overflow-scrolling: touch;
 }
 .whyTContent h4 {font-size:28px;}
 .whyTContent .page3_p1{font-size:26px;letter-spacing: -1px;padding: 2% 0;}

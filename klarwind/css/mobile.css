@@ -223,6 +223,7 @@ padding: 3% 7%;
 text-align: left;
 height: 400px;
 overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
 }
 .whyTContent .page3_p1{font-size:18px;letter-spacing: -1px;padding: 2% 0;padding-top: 10%;}
 .whyTContent p{font-size:16px;list-style: 40px; padding: 1%;}
