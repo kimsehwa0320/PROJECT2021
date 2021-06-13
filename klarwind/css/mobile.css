@@ -300,8 +300,7 @@ overflow-y: scroll;
 
 /* .section.page5 */
 .section.page6 .container6{
-  max-width: 557px;height: 100%;top: 60%;padding: 5% 3%;
-  position: relative;left: 50%;transform: translate(-50%,-50%);
+  max-width: 557px;height: 100%;padding: 27% 3%;
 }
 .section.page6 .page6_column{overflow: hidden;}
 .section.page6 .page6_column img:hover{
@@ -318,8 +317,7 @@ overflow-y: scroll;
 }
 .page6_header h1{font-size: 26px;}
 .page6_header p{font-size: 14px;}
-.page6C2{height: 106px;}
-.page6C4 img{height: 106px;}
+.page6C2 img{display: none;}
 
 
 .page6_row {
@@ -329,6 +327,7 @@ overflow-y: scroll;
   flex-wrap: wrap;
 }
 #page6_img2,#page6_img6{padding-right:0;}
+#page6_img5{height: 127px;}
 
 
 /* Create four equal columns that sits next to each other */
