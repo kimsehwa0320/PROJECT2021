@@ -37,6 +37,13 @@
         auto:true,
         });
 
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 200 ) {
+            $(".top_btn").fadeIn();
+          } else {
+            $(".top_btn").fadeOut();
+          }
+        } );
       });
 
     $(function(){
@@ -109,7 +116,14 @@
         $("#main_menu").removeAttr("style");
       });
 
-
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          $('#topBtn').fadeIn(); }
+        else { $('#topBtn').fadeOut(); }
+      });
+      $("#topBtn").click(function() {
+        $('html, body').animate({ scrollTop : 0  }, 400);
+        return false; });
     });
   </script>
 </head>
@@ -152,6 +166,7 @@
     </div>
   </nav>
 </div>
+<img id="topBtn" src="images/top_btn.png" width=80 height=40 href="#">
   <div id="fullpage">
     <!-- section 1st -->
     <div class="section page1" data-anchor="m1st">
@@ -196,6 +211,7 @@
       </div>
     </div>
     <!-- section 2st -->
+
     <div class="section page2" data-anchor="m2st" style="height:100%">
       <ul class="bxslider">
         <li class="view2st">
@@ -464,5 +480,7 @@
       </div>
     </div>
   </div>
+  <a style="right:20px;" href="#" class="top_btn">
+  <img src="images/top_btn.png" border="0" style="width: 80px;"></a>
 </body>
 </html>

@@ -33,7 +33,12 @@
   				innerWidth:560,
   				innerHeight:315
   			});
-        $(".subMenuTab li").eq(i).addClass("active")
+        $(".subMenuTab li").eq(i).addClass("active");
+
+        $(".top_btn").click( function() {
+      	$("html, body").animate( { scrollTop : 0 }, 400 );
+      	return false;
+        });
   		});
 
       $(function(){
@@ -72,6 +77,7 @@
         function move(i){
           banner.eq(i).css({opacity:0,"z-index":viewTop++}).animate({opacity:1},1000);
         }
+
       });
   </script>
   <style>
@@ -357,5 +363,8 @@ $(".boxWrap>div").eq(num).fadeIn();
 });
 });
 </script>
+<a style="display:scroll;position:fixed;bottom:400px;right:20px;" href="#" class="top_btn">
+<img src="images/top_btn.png" border="0" style="width: 80px;"></a>
+
 </body>
 </html>
