@@ -301,7 +301,7 @@ overflow-y: scroll;
 
 /* .section.page5 */
 .section.page6 .container6{
-  max-width: 557px;height: 100%;padding: 27% 3%;
+  max-width: 557px;height: 100%;padding: 10% 3%;
 }
 .section.page6 .page6_column{overflow: hidden;}
 .section.page6 .page6_column img:hover{
