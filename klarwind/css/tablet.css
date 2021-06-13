@@ -237,11 +237,27 @@ position: relative;
 padding: 3% 0;
 font-size: 24px;
 text-align: left;
+height: 40%;
+overflow-y: scroll;
 -webkit-overflow-scrolling: touch;
 }
-.whyTContent h4 {font-size:28px;}
+.whyTContent h4 {font-size:28px;margin-bottom: 10%;}
 .whyTContent .page3_p1{font-size:26px;letter-spacing: -1px;padding: 2% 0;}
 .whyTContent p{font-size:20px;list-style: 40px; padding: 1%;}
+.whyTxt::-webkit-scrollbar {
+  width: 10px;
+}
+.whyTxt::-webkit-scrollbar-thumb {
+  background-color: #52aff6;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.whyTxt::-webkit-scrollbar-track {
+  background-color: #e6e7e8;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
 
 
 

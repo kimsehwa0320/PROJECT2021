@@ -181,7 +181,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 /* .section.page3  */
 /* .section.page3  */
-.section.page3{position: relative;max-width: 556px;}
+.section.page3{position: relative;max-width: 556px;height: 100%;}
 .section.page3 .whyT{float: right;width: 50%;margin: 0 auto;}
 .section.page3 .whyT h1{font-size: 20px;}
 
