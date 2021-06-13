@@ -224,6 +224,7 @@ text-align: left;
         background:#eee;
         z-index: 2;
         padding: 5% 10%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     }
     .modal_bg{
         display: none;
