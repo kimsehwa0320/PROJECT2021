@@ -197,7 +197,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 
 
 /* .section.page3  */
-.section.page3{position: relative;min-width: 367px;max-width: 991px;}
+.section.page3{position: relative;min-width: 367px;max-width: 991px;height: 100%;}
 .section.page3 .whyT{float: right;width: 50%;margin: 0 auto;}
 
 .section.page3 .page3_t1{
@@ -237,15 +237,16 @@ position: relative;
 padding: 3% 0;
 font-size: 24px;
 text-align: left;
-height: 40%;
+height: 300px;
 overflow-y: scroll;
 -webkit-overflow-scrolling: touch;
+
 }
 .whyTContent h4 {font-size:28px;margin-bottom: 10%;}
 .whyTContent .page3_p1{font-size:26px;letter-spacing: -1px;padding: 2% 0;}
 .whyTContent p{font-size:20px;list-style: 40px; padding: 1%;}
 .whyTxt::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 .whyTxt::-webkit-scrollbar-thumb {
   background-color: #52aff6;
@@ -258,6 +259,14 @@ overflow-y: scroll;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
 }
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display:block;
+  height: 12px;
+  background-color:#52aff6;
+}
+::-webkit-scrollbar-button:vertical:incremen
+::-webkit-scrollbar-button:vertical:decrement
 
 
 

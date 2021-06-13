@@ -221,15 +221,15 @@ position: relative;
 .whyTxt {
 padding: 3% 7%;
 text-align: left;
-height: 400px;
+height: 200px;
 overflow-y: scroll;
 -webkit-overflow-scrolling: touch;
 }
-.whyTContent .page3_p1{font-size:18px;letter-spacing: -1px;padding: 2% 0;padding-top: 10%;}
-.whyTContent p{font-size:16px;list-style: 40px; padding: 1%;}
+.whyTContent .page3_p1{font-size:16px;letter-spacing: -1px;padding: 2% 0;padding-top: 10%;}
+.whyTContent p{font-size:14px;list-style: 40px; padding: 1%;}
 .whyTContent h4{margin-bottom: 10%;}
 .whyTxt::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 .whyTxt::-webkit-scrollbar-thumb {
   background-color: #52aff6;
@@ -242,6 +242,16 @@ overflow-y: scroll;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
 }
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display:block;
+  height: 12px;
+  background-color:#52aff6;
+}
+::-webkit-scrollbar-button:vertical:incremen
+::-webkit-scrollbar-button:vertical:decrement
+
+
 
 /* .section.page4 */
 .section.page4{position: relative;width: 100%;}
