@@ -183,7 +183,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
 /* .section.page3  */
 .section.page3{position: relative;max-width: 556px;height: 100%;}
 .section.page3 .whyT{float: right;width: 50%;margin: 0 auto;}
-.section.page3 .whyT h1{font-size: 20px;}
+.section.page3 .whyT h1{font-size: 28px;padding-bottom: 1%;}
 
 .section.page3 .page3_t1{
   font-size: 42px; font-weight: bold;
@@ -199,7 +199,7 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   margin: 0 auto;padding: 10%;
 }
 .section.page3 .click{
-  background: #52aff6; padding: 15px 20px;
+  background: #52aff6; padding: 15px 20px;width: 50%;
   color:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;text-align: center;
 }
@@ -208,48 +208,51 @@ nav#navTop #topMenu li a:hover{color:#007cd3;}
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* accordionMenu */
-/* .whyT_container{position: absolute;width: 50%;right: 0;} */
-.whyTContent{
-  width: 100%;
-  height: 100%;
-}
-.heading_2{
-cursor: pointer;
-position: relative;
-}
 .whyTxt {
-padding: 3% 7%;
+padding-bottom: 7%;
 text-align: left;
-height: 200px;
-overflow-y: scroll;
--webkit-overflow-scrolling: touch;
 }
-.whyTContent .page3_p1{font-size:16px;letter-spacing: -1px;padding: 2% 0;padding-top: 10%;}
-.whyTContent p{font-size:14px;list-style: 40px; padding: 1%;}
-.whyTContent h4{margin-bottom: 10%;}
-.whyTxt::-webkit-scrollbar {
-  width: 12px;
-}
-.whyTxt::-webkit-scrollbar-thumb {
-  background-color: #52aff6;
-  border-radius: 10px;
-  background-clip: padding-box;
-  border: 2px solid transparent;
-}
-.whyTxt::-webkit-scrollbar-track {
-  background-color: #e6e7e8;
-  border-radius: 10px;
-  box-shadow: inset 0px 0px 5px white;
-}
-::-webkit-scrollbar-button:start:decrement,
-::-webkit-scrollbar-button:end:increment {
-  display:block;
-  height: 12px;
-  background-color:#52aff6;
-}
-::-webkit-scrollbar-button:vertical:incremen
-::-webkit-scrollbar-button:vertical:decrement
+.whyTxt .page3_p1{font-size:18px;letter-spacing: -1px;padding: 2% 0;text-align: center;}
+.whyTxt p{font-size:12px;list-style: 40px; padding: 1%;text-align: center;}
+.whyT h4 {font-size: 20px;margin: 0 auto;font-weight: normal;}
+.modal_wrap{
+        display: none;
+        width: 80%;
+        position: absolute;
+        top:50%;left: 50%;transform: translate(-50%,-50%);
+        background:#eee;
+        z-index: 2;
+        padding: 5% 10%;
+    }
+    .modal_bg{
+        display: none;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0,0, 0.5);
+        top:0;
+        left: 0;
+        z-index: 1;
+    }
+    .modal_close{
+        height: 26px;
+        position: absolute;
+        left: 50%; transform: translateX(-50%);
+        bottom: 0;
+        padding: 10%;
+
+    }
+    .modal_close> a{
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+    }
 
 
 
