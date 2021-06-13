@@ -137,6 +137,16 @@
     }
   </style>
 </head>
+<script>
+$(document).ready(function() {
+  $(".whyTxt").hide();
+  //content 클래스를 가진 div를 표시/숨김(토글)
+  $(".heading_2").click(function()
+  {
+    $(this).next(".whyTxt").slideToggle(500);
+  });
+});
+</script>
 <body>
 <div class="header_top">
   <nav id="navTop">
@@ -229,29 +239,28 @@
     </div>
     <!-- section 3st -->
     <div class="section page3 clearfix" data-anchor="m3st">
+      <img src="images/page3_bg_mobile.png" alt="" class="page3_img1 blind_mo">
           <div class="whyT">
-            <h1 class="page3_t1" id="onView3st">WHY<br><span style="color:#52aff6;">KLARWIND?<br></span><p class="open blind_mo"><a href="#open">Open</a></p></h1>
-          <img src="images/k_banner_three_img1.jpg" alt="" class="page3_img1 blind_pc">
-          <img src="images/page3_bg_mobile.png" alt="" class="page3_img1 blind_mo">
-        </div>
-          <div class="white_content" id="open">
-              <div>
-                <div class="blind_mo">
-                  <h2 class="page3_p1"><mark style="background: #99ccf3;">Fresh air all around your family</mark></h2>
-                  <p class="page3_p2">To protect your family from global pandemic, air pollutions and climate change,
-                  We have a mission to provide enrich and exceptional experience at your home by providing cleaner air in your place.</p>
-                  <p class="page3_p3">
-                  KLARWIND, a South Korean company specializing in air quality control products,
-                  was created in response to the issues of air pollution that is present in South Korea.
-                  KLARWIND is continuing to raise the standards for air quality control products both domestically and internationally
-                  by providing energy efficient products.
-                  KLARWIND products are recognized for its integration of advanced technologies paired with creative simplistic designs and ease of use.
-                  When purchasing a KLARWIND product,
-                  you can be assured that you are in good hands with a quality product designed for your comfort and safety in mind!</p>
-                 <a href="#close" class="blind_mo">close</a>
-               </div>
+            <h1 class="page3_t1" id="onView3st">WHY<br><span style="color:#52aff6;">KLARWIND?<br></span></h1>
+            <div class="whyT_container blind_mo" id="onView4st">
+              <div class="whyTContent">
+                <h4 class="heading_2 click">Click</h4>
+                  <div class="whyTxt">
+                    <h2 class="page3_p1">Fresh air all around your family</h2>
+                    <p>To protect your family from global pandemic, air pollutions and climate change,
+                    We have a mission to provide enrich and exceptional experience at your home by providing cleaner air in your place.</p>
+                    <p>KLARWIND, a South Korean company specializing in air quality control products,
+                    was created in response to the issues of air pollution that is present in South Korea.
+                    KLARWIND is continuing to raise the standards for air quality control products both domestically and internationally
+                    by providing energy efficient products.
+                    KLARWIND products are recognized for its integration of advanced technologies paired with creative simplistic designs and ease of use.
+                    When purchasing a KLARWIND product,
+                    you can be assured that you are in good hands with a quality product designed for your comfort and safety in mind!</p>
+                  </div>
+                </div>
               </div>
-          </div>
+          <img src="images/k_banner_three_img1.jpg" alt="" class="page3_img1 blind_pc">
+        </div>
           <div id="onView5st" class="page3_t2 blind_pc">
             <h2 class="page3_p1"><mark style="background: #99ccf3;">Fresh air all around your family</mark></h2>
             <p class="page3_p2">To protect your family from global pandemic, air pollutions and climate change,
