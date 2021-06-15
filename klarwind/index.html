@@ -120,6 +120,20 @@
         $("#main_menu").removeAttr("style");
       });
 
+      $("body").append("<div id=\"glayLayer\"></div><div id=\"overLayer\"></div>");
+
+            $("a.modal").click(function(e){
+              e.preventDefault();
+              //return false;
+              var ahref = $(this).attr("href");
+              console.log(ahref);
+              $("#glayLayer").show();
+              $("#overLayer").show().html("<img src=\"" + ahref + "\">");
+            });
+            $("#glayLayer,#overLayer").click(function(){
+              $("#glayLayer,#overLayer").hide();
+            });
+
     });
   </script>
 </head>
@@ -147,7 +161,7 @@
       <ul class="clearfix" id="topMenu">
         <li><a href="index.html"><img src="images/k_logo.png" alt="" class="hd_logo blind_pc">HOME</a></li>
         <li class="blind_pc">&nbsp;</li>
-        <li><a href="about.html" style="color:#52aff6;" class="pp">ABOUT</a></li>
+        <li><a href="about.html" class="pp">ABOUT</a></li>
         <li><a href="product.html" class="pp">PRODUCT</a></li>
         <li><a href="support.html" class="pp">SUPPORT</a></li>
         <ul class="clearfix" id="topMenu_2">
@@ -396,7 +410,7 @@
         <!-- Photo Grid -->
         <div class="page6_row">
           <div class="page6_column">
-            <a href="images/g1_a.jpg" class="modal_page6" style="width: 100%;cursor:zoom-in">
+            <a href="images/g1_a.jpg" class="modal" style="width: 100%;cursor:zoom-in">
             <img src="images/g1.jpg" class="modal" style="width: 100%;cursor:zoom-in"></a>
             <a href="images/g2_a.jpg" class="modal" style="width: 100%;cursor:zoom-in">
             <img src="images/g2.jpg" class="modal" style="width:100%;cursor:zoom-in"></a>

@@ -1,53 +1,55 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <title>Scroll back to top</title>
-    <!-- font awesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+  <script src="js/sub_menu.js"></script>
+	<script src="js/wow.js"></script>
+	<script>
+		new WOW().init();
+	</script>
     <style>
-      .scrolltop {
-        display: none;
-        position: fixed;
-        right: 30px;
-        bottom: 50px;
-        z-index: 1030;
-        font-size: 1.875rem;
-        color: #868e96;
-        transition: all 0.5s ease-in-out;
-        opacity: 0.8;
+    .rotate{
+      width: 100%;height: 100%;position: absolute;
+      /* @keyframes duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name */
+animation: 3s ease-in 1s 2 reverse both paused slidein;
+
+/* @keyframes name | duration | easing-function | delay */
+animation: slidein 3s linear 1s;
+
+/* @keyframes name | duration */
+animation: slidein 3s;
+    }
+    @keyframes rotate {
+      from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
-      .scrolltop:hover,
-      .scrolltop:focus {
-        color: #dc3545;
-        transition: all 0.5s ease-in-out;
+      to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
+    }
     </style>
   </head>
   <body>
-    <div style="padding: 20px 20px 1500px 20px">
-      <h2>The example "scroll back to top"</h2>
-      <p>스크롤를 아래로 내리면 버튼이 나타 납니다.</p>
-      <p>버튼을 클릭하면 상단으로 이동 됩니다.</p>
+    <div class="rotate">
+      <img src="images,auto.png" alt="">
     </div>
-    <a id="backToTop" class="scrolltop" href="#">
-      <i class="fas fa-chevron-circle-up"></i>
-    </a>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      jQuery(document).ready(function () {
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-            $('#backToTop').fadeIn(500);
-          } else {
-            $('#backToTop').fadeOut('slow');
-          }
-        });
-        $('#backToTop').click(function (e) {
-          e.preventDefault();
-          $('html, body').animate({scrollTop: 0}, 200);
-        });
-      });
-    </script>
   </body>
 </html>
