@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Scroll back to top</title>
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+    <style>
+      .scrolltop {
+        display: none;
+        position: fixed;
+        right: 30px;
+        bottom: 50px;
+        z-index: 1030;
+        font-size: 1.875rem;
+        color: #868e96;
+        transition: all 0.5s ease-in-out;
+        opacity: 0.8;
+      }
+      .scrolltop:hover,
+      .scrolltop:focus {
+        color: #dc3545;
+        transition: all 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="padding: 20px 20px 1500px 20px">
+      <h2>The example "scroll back to top"</h2>
+      <p>스크롤를 아래로 내리면 버튼이 나타 납니다.</p>
+      <p>버튼을 클릭하면 상단으로 이동 됩니다.</p>
+    </div>
+    <a id="backToTop" class="scrolltop" href="#">
+      <i class="fas fa-chevron-circle-up"></i>
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      jQuery(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $('#backToTop').fadeIn(500);
+          } else {
+            $('#backToTop').fadeOut('slow');
+          }
+        });
+        $('#backToTop').click(function (e) {
+          e.preventDefault();
+          $('html, body').animate({scrollTop: 0}, 200);
+        });
+      });
+    </script>
+  </body>
+</html>
