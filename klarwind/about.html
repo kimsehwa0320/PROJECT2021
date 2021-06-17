@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Klarwind :: brand</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/wow.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+  <script>
+    $(document).ready(function(){
+        $("ul.about4_slider").bxSlider({
+          controls:false,
+          pager:false,
+          auto:true,
+          mode:'vertical'
+        });
+  			$(".youtube").colorbox({
+  				iframe:true,
+  				innerWidth:560,
+  				innerHeight:315
+  			});
+        $(".subMenuTab li").eq(i).addClass("active");
+  		});
+
+      $(function(){
+        $(".menu-trigger").click(function(){
+          var toggle = $(".menu-trigger").attr("class"); //get
+          console.log(toggle); // menu-trigger 찍힘
+          if(toggle == "menu-trigger"){
+            $(".menu-trigger").addClass("change");
+            $("#main_menu").stop().animate({left:0},300);
+          }else{
+            $(".menu-trigger").removeClass("change");
+            $("#main_menu").stop().animate({left:"-100%"},300);
+          }
+        });
+
+        $(window).resize(function(){
+          $(".menu-trigger").removeClass("change");
+          $("#main_menu").removeAttr("style");
+        });
+
+        var current = 0;
+        var banner = $(".slider_4 li");
+        var banCount = banner.length; //banner 수
+        var viewTop = 0; //z-index값
+
+        function slider(){
+          banner.eq(current).css("opacity",1);
+
+          current++;
+          if(current==banCount){current=0} //banCount도 5로 banner과 같음
+
+          move(current); //증가 된 current값
+        }
+        setInterval(slider,3000); //setInterval은 javascript 임
+
+        function move(i){
+          banner.eq(i).css({opacity:0,"z-index":viewTop++}).animate({opacity:1},1000);
+        }
+      });
+  </script>
+  <style>
+    h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
+    body{font-family: 'Noto Sans', sans-serif;}
+  </style>
+</head>
+<header>
+<div class="header_top">
+  <nav id="navTop">
+    <a href="index.html" class="hd_logo_mobile blind_mo"><img src="images/k_logo_mobile.png" alt=""></a>
+    <div id="main_menu">
+      <ul class="clearfix" id="topMenu">
+        <li><a href="index.html"><img src="images/k_logo.png" alt="" class="hd_logo blind_pc">HOME</a></li>
+        <li class="blind_pc">&nbsp;</li>
+        <li><a href="about.html" style="color:#52aff6;" class="pp">ABOUT</a></li>
+        <li><a href="product.html" class="pp">PRODUCT</a></li>
+        <li><a href="support.html" class="pp">SUPPORT</a></li>
+        <ul class="clearfix" id="topMenu_2">
+          <li></li>
+          <li></li>
+          <li class="blind_pc"><a href="https://www.facebook.com/Klarwind-US-104259765185755/?ref=pages_you_manage" target="_blank"><img src="images/fb.png" alt=""></a></li>
+          <li class="blind_pc"><a href="https://instagram.com/klarwind_usa?utm_medium=copy_link" target="_blank"><img src="images/ig.png" alt=""></a></li>
+          <li class="blind_mo"><a href="https://www.facebook.com/Klarwind-US-104259765185755/?ref=pages_you_manage" target="_blank"><img src="images/fb_mo.png" alt=""></a></li>
+          <li class="blind_mo"><a href="https://instagram.com/klarwind_usa?utm_medium=copy_link" target="_blank"><img src="images/ig_mo.png" alt=""></a></li>
+        </ul>
+      </ul>
+
+    </div>
+    <div class="bar">
+      <div class="menu-trigger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+  </nav>
+</div>
+</header>
+
+<body>
+<div class="About_container">
+  <div class="aboutContainer">
+    <div class="about_bg1">
+      <div class="aboutContainer1">
+        <ul class="clearfix blind_pc brand_pc">
+          <li class="abot_left1">
+            <h1>BRAND STORY</h1>
+            <P class="wow fadeInLeft" data-wow-delay="0.2s">KLARWIND is a leading global premium brand that develops healthcare products.
+              It was founded by passionate business owner in Korea who has been in various social
+              activities for disabled people in respiratory problems.
+              Klarwind was originated from many concerns of creating cleaner air for those people.
+              He concentrated on developing air-cleaning technology to relieve the pain of people
+              who suffering from respiratory diseases and allergies.
+            </P>
+            <img src="images/brand01.jpg" alt="" class="wow fadeIn" data-wow-delay="0.35s">
+            <p class="left_p wow fadeInRight" data-wow-delay="0.5s">Klarwind is aiming for the best value in terms of performance, design and reliability.
+              Also, it won several awards at prestigious design competitions in Europe and recognized for its excellence in design.
+              </p>
+          </li>
+          <li class="abot_right1 wow bounceInUp" data-wow-delay="1s">
+            <img src="images/brand1.jpg" alt="">
+            <p>KLARWIND is a synthesis composing with "KLAR" which means "Clean" in Germany and "WIND" in English. Today,
+              we continue to develop the solutions to make a better place you live and our planet.
+              KLARWIND promises to lead global air purifier market and try to stay in company with customers in their
+              daily life with the best products & services.
+            </p>
+          </li>
+        </ul>
+
+        <div class="blind_mo">
+          <div class="abot_left1">
+            <div class="w_bar"></div>
+            <h4>BRAND</h4>
+            <h4 class="pt10">STORY</h4>
+            <P class="wow fadeInLeft" data-wow-delay="0.2s">KLARWIND is a leading global premium brand that develops healthcare products.
+              It was founded by passionate business owner in Korea who has been in various social
+              activities for disabled people in respiratory problems.
+              Klarwind was originated from many concerns of creating cleaner air for those people.
+              He concentrated on developing air-cleaning technology to relieve the pain of people
+              who suffering from respiratory diseases and allergies.
+            </P>
+            <img src="images/brand01.jpg" alt="" class="wow fadeIn" data-wow-delay="0.35s">
+            <p class="left_p wow fadeInRight" data-wow-delay="0.5s">Klarwind is aiming for the best value in terms of performance, design and reliability.
+              Also, it won several awards at prestigious design competitions in Europe and recognized for its excellence in design.
+              </p>
+              <img src="images/brand1.jpg" alt="" class="wow fadeIn" data-wow-delay="0.2s">
+              <p class="wow fadeInLeft" data-wow-delay="0.2s">KLARWIND is a synthesis composing with "KLAR" which means "Clean" in Germany and "WIND" in English. Today,
+                we continue to develop the solutions to make a better place you live and our planet.
+                KLARWIND promises to lead global air purifier market and try to stay in company with customers in their
+                daily life with the best products & services.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aboutContainer2">
+      <div class="grobal">
+        <div class="b_bar"></div>
+        <div class="global_2">
+          <h1>GROBAL NETWORK</h1>
+          <P>A global company recognized by the world<br>
+              Global Aviation</P>
+        </div>
+      </div>
+          <div class="mapimg">
+            <img src="images/map.jpg" alt="">
+          </div>
+          <div class="mapContainer">
+          <li class="canada">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Canada</p>
+            </div>
+          </li>
+          <li class="usa">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>USA</p>
+            </div>
+          </li>
+          <li class="australia">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Australia</p>
+            </div>
+          </li>
+          <li class="Saudi">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Saudi arabia</p>
+            </div>
+          </li>
+          <li class="turkey">
+            <div class="mapOverlay">
+              <p>Turkey</p>
+            </div>
+            <img src="images/map_1.png" alt="">
+          </li>
+          <li class="hongkong">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Hongkong</p>
+            </div>
+          </li>
+          <li class="uae">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>UAE</p>
+            </div>
+          </li>
+          <li class="kuwait">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Kuwait</p>
+            </div>
+          </li>
+          <li class="qatar">
+            <div class="mapOverlay">
+              <p>Qatar</p>
+            </div>
+            <img src="images/map_1.png" alt="">
+          </li>
+          <li class="iraq">
+            <div class="mapOverlay">
+              <p>Iraq</p>
+            </div>
+            <img src="images/map_1.png" alt="">
+          </li>
+          <li class="egypt">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Egypt</p>
+            </div>
+          </li>
+          <li class="asia">
+            <div class="mapOverlay">
+              <p>ㆍVietnam<br> ㆍPhilippines<br> ㆍChina<br> ㆍSingapore<br> ㆍPakistan<br> ㆍIndia<br> ㆍThailand<br> ㆍMalaysia</p>
+            </div>
+            <img src="images/map_1.png" alt="">
+          </li>
+          <li class="eu">
+            <img src="images/map_1.png" alt="">
+            <div class="mapOverlay">
+              <p>Germany Italy Poland France Austria Hungary Czech Slovenia Turkey Greece</p>
+            </div>
+          </li>
+
+        </div>
+    </div>
+    <div class="blind_pc">
+      <div class="about_bg3">
+        <div class="aboutContainer3">
+          <img src="images/about3.png" alt="">
+          <ul class="wow bounceInRight" data-wow-delay="0.1s">
+            <li class="mission">
+              <h1>MISSION</h1>
+              <P>Our mission is to protect your family from global pandemic, air pollutions and climate change by
+                providing cleaner air in your place. We also aim to provide enrich and exceptional experience at your home.</P>
+            </li>
+            <li class="vision">
+              <h1>VISION</h1>
+              <P>We believe that we can make your life be smarter and cleaner by leading 4th industrial revolution of
+                healthcare industry, developing advanced technologies and digital innovation such as IoT,  Voice control and smart control etc.  </P>
+            </li>
+          </ul>
+          </div>
+      </div>
+    </div>
+    <div class="pd">
+      <div class="about_bg3">
+        <div class="aboutContainer3">
+          <img src="images/about3.png" alt="">
+          <ul class="clearfix wow bounceInRight" data-wow-delay="0.1s">
+            <li class="mission">
+              <h1>MISSION</h1>
+              <P>Our mission is to protect your family from global pandemic, air pollutions and climate change by
+                providing cleaner air in your place. We also aim to provide enrich and exceptional experience at your home.</P>
+            </li>
+            <li class="vision">
+              <h1>VISION</h1>
+              <P>We believe that we can make your life be smarter and cleaner by leading 4th industrial revolution of
+                healthcare industry, developing advanced technologies and digital innovation such as IoT,  Voice control and smart control etc.  </P>
+            </li>
+          </ul>
+          </div>
+      </div>
+    </div>
+        <div class="aboutContainer4">
+          <ul class="clearfix">
+            <div class="bh_bar2 blind_pc"></div>
+            <li class="abot_left4">
+              <div class="bh_bar blind_mo"></div>
+              <h1>CSR</h1>
+                <div class="wow bounceInLeft pt20" data-wow-delay="0.1s">
+                  <P class="pb5">Our CEO is a president of the ‘Korean Federation of Bocchia disabled person’ and has been hosting many Paralympics
+                    as a social campaign. Also, during the 2020 global disaster Covid-19 pandemic, the company sponsored air purifiers
+                    and air conditioners for medical staffs and people in need.
+                  </P>
+
+                  <P>In addition, we have been supporting in various social service activities for people who has an allergic disease and
+                    respiratory patients as a part of social responsibilities.
+                    We continue to encourage people to join this social campaign to create better social network and structure.
+                  </P>
+                </div>
+            </li>
+            <li class="abot_right4">
+              <div class="about_bg4">
+                <div class="slider_4">
+                  <ul>
+                    <li><img src="images/brand2.jpg" alt=""></li>
+                    <li><img src="images/brand3.jpg" alt=""></li>
+                    <li><img src="images/brand4.jpg" alt=""></li>
+                    <li><img src="images/brand6.jpg" alt=""></li>
+                    <li><img src="images/brand5.jpg" alt=""></li>
+                    <li><img src="images/brand7.jpg" alt=""></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="pd_2">
+          <div class="about_bg5">
+            <div class="aboutContainer5">
+              <ul class="clearfix">
+                <div class="bh_bar2 blind_pc"></div>
+                <li class="abot_left5">
+                  <video id="bg4_video" autoplay muted loop  data-autoplay>
+                    <source src="images/klarwind5.mp4" >
+                  </video>
+                </li>
+                <li class="abot_right5">
+                  <div class="bh_bar blind_mo"></div>
+                  <h1>TECHNOLOGIES</h1>
+                  <div class="wow bounceInRight pt20 pt30" data-wow-delay="0.1s">
+                    <P class="pb5">Based on the excellent technology of air conditioning systems essential for state-of-the-art buildings in domestic and abroad,
+                      we developed air purifiers to protect people, pets, and children in danger of global air pollution.</p>
+                      <p class="pb5">We also design every product with HEPA H13 air filters which makes a great performance to improve air quality in your place.
+                      It removes more than 99.97% of dust, fine dust, allergic bacteria and harmful gases through 5 steps.</p>
+                      <p class="pb5">In addition, we are growing as a leading company based on our long-standing know-how in eco-friendly and high-efficiency air
+                       conditioning technologies that can maintain cooling and heating at high speeds of more than 218miles per hour.</p>
+                  </div>
+                </li>
+              </ul>
+              </div>
+          </div>
+        </div>
+            <!-- <div class="h_bg"></div> -->
+              <div class="aboutContainer6">
+                <ul class="clearfix">
+                  <li class="abot_left6">
+                    <div class="b_bar blind_mo"></div>
+                    <div class="b_bar2 blind_pc" ></div>
+                    <div class="history">
+                      <h1>HISTORY</h1>
+                    </div>
+                  </li>
+                  <li class="abot_right6">
+                    <h1>2019</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.1s">
+                      Selected as an ‘influential Korean CEO of the year’ (‘15-’19)<br>
+                      Global Korean Leader Awards-global customer satisfaction (‘13 – ‘19)
+                    </p>
+                    <h1>2018</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.2s">
+                      Selected as a global Korean leader of the year
+                    </p>
+                    <h1>2017</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.3s">
+                      AUTECH, ‘MOU for the safe transportation of mobility handicapped people’, <br>
+                      for 2017 Pyeongchang Winter Olympics and Paralympics.
+                    </p>
+                    <h1>2016</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.32s">
+                      AUTECH, First developed a negative pressure ambulance in Korean
+                    </p>
+                    <h1>2015</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.34s">
+                      The CEO, was appointed as the president of Korean BOCCIA Federation <br>
+                      Developed and supplied an oxygen supply and absorption system for EMS helicopters to Korea Aerospace Industries, Ltd.(KAI)
+                    </p>
+                    <h1>2012</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.36s">
+                      MOU between AUTECH CORPORATION and Korean Boccia Federation <br>
+                      Developed a freezer for vehicles
+                    </p>
+                    <h1>2011</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.38s">
+                      An affiliate joined the corporate(Autech Carrier Co., Ltd.).
+                    </p>
+                    <h1>2009</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.40s">
+                      Received a grand prize for the quality innovation(in 2009 New Quality Convention) in full-air suspension system for ambulances.
+                    </p>
+                    <h1>2007</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.42s">
+                      Concluded a contract of manufacturing of medical devices with MAXTEC.
+                    </p>
+                    <h1>2005</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.44s">
+                      Received a commendation(from the Public Procurement Service) for great products.
+                    </p>
+                    <h1>2003</h1>
+                    <p class="wow fadeIn" data-wow-delay="0.46s">
+                      Listed on KOSDAQ. <br>
+                      Received an award from the president and the Ministry of Commerce, <br>
+                      Industry and Energy [in a commercialization of new technology sector.
+                    </p>
+                  </li>
+                </ul>
+                </div>
+
+          <div class="footer_pd">
+              <div class="about_footer">
+                <h6></h6>
+                <img src="images/k_logo.png" alt="">
+              </div>
+          </div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $(".boxWrap>div").eq(0).hide();
+  $(".tabWrap>ul>li").click(function(){
+  var num = $(this).index();
+  $(".tabWrap>ul>li").removeClass();
+  $(this).addClass("active");
+  $(".boxWrap>div").hide();
+  $(".boxWrap>div").eq(num).fadeIn();
+  });
+  $(window).scroll(function () {
+   if ($(this).scrollTop() > 100) {
+     $('#backToTop').fadeIn('slow');
+   } else {
+     $('#backToTop').fadeOut('fast');
+   }
+ });
+ $('#backToTop').click(function (e) {
+   e.preventDefault();
+   $('html, body').animate({scrollTop: 0}, 300);
+ });
+});
+</script>
+<a id="backToTop" class="scrolltop" href="#">
+  <img src="images/top_btn.png" alt="">
+</a>
+
+</body>
+</html>

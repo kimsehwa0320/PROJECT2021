@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/fullpage.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/colorbox.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.fullPage.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/wow.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script src="js/jquery.colorbox-min.js"></script>
+  <TITLE>Get 방식의 주소 파라미터를 받아서 처리</TITLE>
+<script type="text/javascript">
+  var tabmove = function(number) {
+    location.href = "ex2.html?tab=" + number;
+  };
+
+</script>
+</head>
+
+<body>
+	<p onClick="tabmove(1)">1</p>
+	<p onClick="tabmove(2)">2</p>
+
+</body>
+</html>

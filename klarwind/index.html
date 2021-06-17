@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Klarwind</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fullpage.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/colorbox.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.fullPage.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/wow.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script src="js/jquery.colorbox-min.js"></script>
+  <script>
+    new WOW().init();
+
+      $(document).ready(function(){
+        $('.bxslider').bxSlider({
+        pager: true,
+        controls:false,
+        auto:true,
+        });
+        $('.msinSlide').bxSlider({
+        pager: false,
+        mode:'vertical',
+        controls:false,
+        auto:true,
+        });
+
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 200 ) {
+            $(".top_btn").fadeIn();
+          } else {
+            $(".top_btn").fadeOut();
+          }
+        } );
+
+        var tabmove = function(number) {
+          location.href = "product.html?tab=" + number;
+        };
+      });
+
+    $(function(){
+      $("#fullpage").fullpage({
+          menu:"#topMenu", //메뉴지
+          anchors:["m1st","m2st","m3st","m4st","m5st","m6st"], //이동 위치 지정
+          navigation:true,
+          afterLoad:function(anchorslink,index){
+            console.log(anchorslink + "," + index);
+            if(index == 1){
+              $("#onView1st").addClass("move");
+              $("#onView2st").addClass("move");
+              $("#onView6st").addClass("move");
+            }else{
+              $("#onView1st").removeClass("move");
+              $("#onView2st").removeClass("move");
+              $("#onView6st").removeClass("move");
+            }
+
+            if(index == 3){
+              $("#onView3st").addClass("move");
+              $("#onView4st").addClass("move");
+              $("#onView5st").addClass("move");
+
+            }else{
+              $("#onView3st").removeClass("move");
+              $("#onView4st").removeClass("move");
+              $("#onView5st").removeClass("move");
+            }
+
+            if(index == 6){
+              $("#onView7st").addClass("move");
+              $("#onView8st").addClass("move");
+              $("#onView9st").addClass("move");
+              $("#onView10st").addClass("move");
+            }else{
+              $("#onView7st").removeClass("move");
+              $("#onView8st").removeClass("move");
+              $("#onView9st").removeClass("move");
+              $("#onView10st").removeClass("move");
+            }
+          }
+        });
+      $("#fullpage").fullpage({
+          menu:"#topMenu_2", //메뉴지
+          anchors:["m6st"], //이동 위치 지정
+          navigation:true
+      });
+
+      $(".subContent div").hide().eq(0).show();
+      $(".subMenuTab li").click(function(){
+        var i = $(this).index();
+        $(".subContent div").hide().eq(i).fadeIn();
+      });
+
+      $(".menu-trigger").click(function(){
+        var toggle = $(".menu-trigger").attr("class"); //get
+        console.log(toggle); // menu-trigger 찍힘
+        if(toggle == "menu-trigger"){
+          $(".menu-trigger").addClass("change");
+          $("#main_menu").stop().animate({left:0},300);
+        }else{
+          $(".menu-trigger").removeClass("change");
+          $("#main_menu").stop().animate({left:"-100%"},300);
+        }
+      });
+
+      $(window).resize(function(){
+        $(".menu-trigger").removeClass("change");
+        $("#main_menu").removeAttr("style");
+      });
+
+      $("body").append("<div id=\"glayLayer\"></div><div id=\"overLayer\"></div>");
+
+            $("a.modal").click(function(e){
+              e.preventDefault();
+              //return false;
+              var ahref = $(this).attr("href");
+              console.log(ahref);
+              $("#glayLayer").show();
+              $("#overLayer").show().html("<img src=\"" + ahref + "\">");
+            });
+            $("#glayLayer,#overLayer").click(function(){
+              $("#glayLayer,#overLayer").hide();
+            });
+
+    });
+  </script>
+</head>
+<script>
+    window.onload = function() {
+
+    function onClick() {
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.modal_bg').style.display ='block';
+    }
+    function offClick() {
+        document.querySelector('.modal_wrap').style.display ='none';
+        document.querySelector('.modal_bg').style.display ='none';
+    }
+
+    document.getElementById('modal_btn').addEventListener('click', onClick);
+    document.querySelector('.modal_close').addEventListener('click', offClick);
+};
+</script>
+<style>
+  h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
+  body{font-family: 'Noto Sans', sans-serif;}
+</style>
+<body>
+<div class="header_top">
+  <nav id="navTop">
+    <a href="index.html" class="hd_logo_mobile blind_mo"><img src="images/k_logo_mobile.png" alt=""></a>
+    <div id="main_menu">
+      <ul class="clearfix" id="topMenu">
+        <li><a href="index.html"><img src="images/k_logo.png" alt="" class="hd_logo blind_pc">HOME</a></li>
+        <li class="blind_pc">&nbsp;</li>
+        <li><a href="about.html" class="pp">ABOUT</a></li>
+        <li><a href="product.html" class="pp">PRODUCT</a></li>
+        <li><a href="support.html" class="pp">SUPPORT</a></li>
+        <ul class="clearfix" id="topMenu_2">
+          <li></li>
+          <li></li>
+          <li class="blind_pc"><a href="https://www.facebook.com/Klarwind-US-104259765185755/?ref=pages_you_manage" target="_blank"><img src="images/fb.png" alt=""></a></li>
+          <li class="blind_pc"><a href="https://instagram.com/klarwind_usa?utm_medium=copy_link" target="_blank"><img src="images/ig.png" alt=""></a></li>
+          <li class="blind_mo"><a href="https://www.facebook.com/Klarwind-US-104259765185755/?ref=pages_you_manage" target="_blank"><img src="images/fb_mo.png" alt=""></a></li>
+          <li class="blind_mo"><a href="https://instagram.com/klarwind_usa?utm_medium=copy_link" target="_blank"><img src="images/ig_mo.png" alt=""></a></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="bar">
+      <div class="menu-trigger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+  </nav>
+</div>
+<img id="topBtn" src="images/top_btn.png" width=80 height=40 href="#">
+  <div id="fullpage">
+    <!-- section 1st -->
+    <div class="section page1" data-anchor="m1st">
+      <div class="its blind_pc">
+        <h1>IT’S</h1>
+        <h2>Klarwind</h2>
+      </div>
+      <div class="blind_mo">
+        <h1>IT’S Klarwind</h1>
+      </div>
+      <div class="go wow fadeIn blind_pc" data-wow-delay="0.4s">
+        <p class="vWrap"><a href="https://www.amazon.com/s?k=klarwind&ref=nb_sb_noss_2" target="blank">GO<br>AMAZON</a></p>
+        <div class="vWrap_bg"></div>
+      </div>
+      <div class="go wow fadeIn blind_mo" data-wow-delay="0.4s">
+        <p class="vWrap"><a href="https://www.amazon.com/s?k=klarwind&ref=nb_sb_noss_2" target="blank">GO AMAZON</a></p>
+      </div>
+      <div class="sliderWrap">
+        <ul class="msinSlide">
+          <li>
+            <div class="mainTxt1" class="blind_pc">
+              <p>To show<br> &nbsp;<span class="mainh3">"How to clean"</span></p>
+            </div>
+            <img src="images/main1_1.jpg" alt="">
+          </li>
+          <li>
+            <img src="images/main2.jpg" alt="">
+            <div class="mainTxt2">
+              <p>To see <br>&nbsp;<span class="mainh3">"Indoor air quality"</span> </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/main3.jpg" alt="">
+            <div class="mainTxt3">
+              <p>To make &nbsp;<span class="mainh3">"you Comfort"</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="scroll" data-wow-delay="0.5s">
+        <a href="#m2st"><img src="images/btn_scroll2.png" alt=""></a>
+      </div>
+    </div>
+    <!-- section 2st -->
+
+    <div class="section page2" data-anchor="m2st" style="height:100%">
+      <ul class="bxslider">
+        <li class="view2st">
+          <div class="page2_slide2">
+            <h1>Peace of mind</h1>
+            <p>Klarwind brand is aiming for the best value in terms of performance, design and reliability. <span class="blind_pc">Also, it won
+            several awards at prestigious European design competitions in Europe and recognized for its excellence in design.</span>
+            <p>
+            <a href="">BUY NOW</a>
+              <img src="images/aham_intertek.jpg" alt="">
+          </div>
+        </li>
+        <li class="view1st">
+        <div class="page2_slide1">
+          <h1>Peace of mind</h1>
+          <p>KLARWIND is a synthesis composing with "KLAR" which means "Clean" in Germany and "WIND" in English. <p>
+          <a href="">BUY NOW</a>
+            <img src="images/aham_intertek.jpg" alt="">
+        </div>
+        </li>
+      </ul>
+    </ul>
+    </div>
+    <!-- section 3st -->
+    <div class="section page3 clearfix" data-anchor="m3st">
+      <img src="images/page3_bg_mobile.png" alt="" class="page3_img1 blind_mo">
+          <div class="whyT">
+            <h1 class="page3_t1" id="onView3st">WHY<br><span style="color:#52aff6;">KLARWIND?<br></span></h1>
+            <h4 class="click blind_mo onView4st" id="modal_btn">Click</h4>
+            <div class="modal_bg"></div>
+            <div class="modal_wrap blind_mo">
+              <div class="whyTxt">
+                <h2 class="page3_p1"><mark style="background: #99ccf3;">Fresh air all around your family</mark></h2>
+                <p>To protect your family from global pandemic, air pollutions and climate change,
+                We have a mission to provide enrich and exceptional experience at your home by providing cleaner air in your place.</p>
+                <p>KLARWIND, a South Korean company specializing in air quality control products,
+                was created in response to the issues of air pollution that is present in South Korea.
+                KLARWIND is continuing to raise the standards for air quality control products both domestically and internationally
+                by providing energy efficient products.
+                KLARWIND products are recognized for its integration of advanced technologies paired with creative simplistic designs and ease of use.
+                When purchasing a KLARWIND product,
+                you can be assured that you are in good hands with a quality product designed for your comfort and safety in mind!</p>
+              </div>
+              <div class="modal_close"><a href="#">close</a></div>
+            </div>
+
+          <img src="images/k_banner_three_img1.jpg" alt="" class="page3_img1 blind_pc">
+        </div>
+          <div id="onView5st" class="page3_t2 blind_pc">
+            <h2 class="page3_p1"><mark style="background: #99ccf3;">Fresh air all around your family</mark></h2>
+            <p class="page3_p2">To protect your family from global pandemic, air pollutions and climate change,
+            We have a mission to provide enrich and exceptional experience at your home by providing cleaner air in your place.</p>
+            <p class="page3_p3">KLARWIND, a South Korean company specializing in air quality control products,
+            was created in response to the issues of air pollution that is present in South Korea.
+            KLARWIND is continuing to raise the standards for air quality control products both domestically and internationally
+            by providing energy efficient products.
+            KLARWIND products are recognized for its integration of advanced technologies paired with creative simplistic designs and ease of use.
+            When purchasing a KLARWIND product,
+            you can be assured that you are in good hands with a quality product designed for your comfort and safety in mind!</p>
+          </div>
+    </div>
+    <!-- section 4st -->
+    <div class="section page4" data-anchor="m4st">
+      <div class="container4">
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <video id="klarwind4_video" autoplay muted loop  data-autoplay>
+            <source src="images/klarwind4.mp4" >
+          </video>
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="images/klarwind2_bg.jpg" style="width:100%" class="blind_pc">
+          <img src="images/k100_mo.jpg" style="width:100%" class="blind_mo">
+          <div class="klarwind300">
+            <h1>Klarwind 100</h1>
+            <p>Klarwind 100 is designed to cover up to small size room or kids room.</p>
+            <a href="product.html">Coming Soon</a>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="images/klarwind3_bg.jpg" style="width:100%" class="blind_pc">
+          <img src="images/k300_mo.jpg" style="width:100%" class="blind_mo">
+          <div class="klarwind300">
+            <h1>Klarwind 300</h1>
+            <p>Klarwind 300 is designed to cover up to medium size room.</p>
+            <a href="product.html#tab_2">More</a>
+
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="images/klarwind4_bg.jpg" style="width:100%" class="blind_pc">
+          <img src="images/k500_mo.jpg" style="width:100%" class="blind_mo">
+          <div class="klarwind300">
+            <h1>Klarwind 500</h1>
+            <p>Klarwind 500 is designed to cover up to large size room.</p>
+            <a onClick="tabmove(2)">More</a>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="images/klarwind5_bg.jpg" style="width:100%" class="blind_pc">
+          <img src="images/k500s_mo.jpg" style="width:100%" class="blind_mo">
+          <div class="klarwind300">
+            <h1>Klarwind 500S</h1>
+            <p>Klarwind 500S is designed to cover up to large size room.</p>
+            <a onClick="tabmove(3)">More</a>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+          <img src="images/klarwind7_bg.jpg" style="width:100%" class="blind_pc">
+          <img src="images/k700_mo.jpg" style="width:100%" class="blind_mo">
+          <div class="klarwind300">
+            <h1>Klarwind 700</h1>
+            <p>Klarwind 700 is designed to cover up to work space or office.</p>
+            <a onClick="tabmove(4)">More</a>
+          </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="images/klarwind_bg.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Klarwind">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/klarwind2_2_bg.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/klarwind3_2_bg.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/klarwind4_2_bg.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/klarwind5_2_bg.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/klarwind7_2_bg.jpg" style="width:100%" onclick="currentSlide(6)" alt="Nature and sunrise">
+          </div>
+        </div>
+      </div>
+      <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
+    </div>
+    <!-- section 5st -->
+    <div class="section page6" data-anchor="m5st">
+      <!-- Header -->
+      <div class="container6">
+        <div class="page6_header">
+          <h1>Klarwind Gallery</h1>
+          <p>Match anytime, anywhere.</p>
+        </div>
+        <!-- Photo Grid -->
+        <div class="page6_row">
+          <div class="page6_column">
+            <a href="images/g1_a.jpg" class="modal" style="width: 100%;cursor:zoom-in">
+            <img src="images/g1.jpg" class="modal" style="width: 100%;cursor:zoom-in"></a>
+            <a href="images/g2_a.jpg" class="modal" style="width: 100%;cursor:zoom-in">
+            <img src="images/g2.jpg" class="modal" style="width:100%;cursor:zoom-in"></a>
+          </div>
+          <div class="page6_column">
+            <a href="images/g2_2.jpg" id="page6_img2" class="modal" style="width:100%;cursor:zoom-in">
+            <img src="images/g2_2.jpg" id="page6_img2" class="modal" style="width:100%;cursor:zoom-in"></a>
+          </div>
+          <div class="page6_column">
+            <a href="images/g3.jpg" class="modal" style="width:100%;cursor:zoom-in">
+            <img src="images/g3.jpg" class="modal" style="width:100%;cursor:zoom-in"></a>
+            <a href="images/g4_a.jpg" class="modal page6C2" style="width:100%;cursor:zoom-in">
+            <img src="images/g4.jpg" class="modal page6C2" style="width:100%;cursor:zoom-in"></a>
+          </div>
+          <div class="page6_column page6C4">
+            <a href="images/g5.jpg" id="page6_img5" class="modal" style="width:100%;cursor:zoom-in">
+            <img src="images/g5.jpg" id="page6_img5" class="modal" style="width:100%;cursor:zoom-in"></a>
+            <a href="images/g6.jpg" id="page6_img6" class="modal page6C2" style="width:100%;cursor:zoom-in">
+            <img src="images/g6.jpg" id="page6_img6" class="modal page6C2" style="width:100%;cursor:zoom-in"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section 6st -->
+    <div class="section page5" data-anchor="m6st" style="background: #000;">
+      <div class="container5">
+        <div class="markheader">
+          <div class="box"></div>
+          <div>
+            <h1>KLARWIND CERTIFICATION DETAILS LIST</h1>
+          </div>
+          <ul class="mark">
+            <li class="clearfix">
+              <div class="mark1">
+                <div class="page5imgAll">
+                  <img src="images/tek.png" alt="">
+                </div>
+                <div id="onView7st">
+                  <h3>INTERTEK</h3>
+                  <p>Intertek is a Total Quality Assurance provider to industries worldwide.
+                    It means that the minimum conditions of product safety standards are satisfied.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="clearfix">
+                <div class="mark2">
+                  <div class="page5imgAll">
+                    <img src="images/aham.png" alt="">
+                  </div>
+                  <div id="onView8st">
+                    <h3>AHAM</h3>
+                    <p>AHAM’s standard for measuring an air cleaner’s efficacy is called the Clean Air Delivery Rate (CADR).
+                      CADR indicates the volume of filtered air an air cleaner delivers, with separate scores for tobacco smoke, pollen and dust. </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="mark3">
+                    <div class="page5imgAll">
+                      <img src="images/red_dot.png" alt="">
+                    </div>
+                    <div id="onView9st">
+                      <h3>RED DOT DESIGN AWARD</h3>
+                      <p>Klarwind has won awards from numerous prestigious design competitions all over the world including Red dot and iF awards.
+                        “Red Dot DESIGN AWARD” has become established internationally as one of the most sought-after seals of quality for good design. </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="clearfix">
+                    <div class="mark4">
+                      <div class="page5imgAll">
+                        <img src="images/if.png" alt="">
+                      </div>
+                      <div id="onView10st">
+                        <h3>IF DESIGN AWARD</h3>
+                        <p>“iF DESIGN AWARD” is the oldest independent design seal in the world.
+                          It is a symbol of outstanding design achievements that focuses on the innovative power of design.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+        </div>
+      </div>
+      <div class="top_btn">
+        <a id="backToTop" href="#m1st">
+          <img src="images/top_btn.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

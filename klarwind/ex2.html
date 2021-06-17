@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/animate.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script src="js/jquery.bxslider.js"></script>
+  <script src="js/sub_menu.js"></script>
+	<script src="js/wow.js"></script>
+  <TITLE>Get 방식의 주소 파라미터를 받아서 처리</TITLE>
+
+
+<script type="text/javascript">
+  var displayTab = function(number) {
+    $('#tab_' + number).css('display', 'block');
+  };
+
+  $(document).ready(function() {
+    var address = unescape(location.href);
+    var param = "";
+    if(address.indexOf("tab", 0) != -1) {
+      param = address.substring(address.indexOf("tab", 0) + 4);
+    } else {
+      param = "1";
+    }
+    displayTab(param);
+  });
+
+</script>
+
+<style type="text/css">
+  div#tab_1 {display:none; position:absolute; top:50px; left:50px; width:100px; height:100px; background:red;}
+  div#tab_2 {display:none; position:absolute; top:150px; left:50px; width:200px; height:200px; background:blue;}
+</style>
+
+
+</head>
+
+<body>
+  <div id="tab_menu">
+    <a href="" onClick="displayTab(1)"></a>
+    <a href="" onClick="displayTab(2)"></a>
+	</div>
+	<div id="tab">
+		<div id="tab_1">
+		</div>
+
+		<div id="tab_2">
+		</div>
+	</div>
+ </body>
+ </html>
