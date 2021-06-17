@@ -108,10 +108,6 @@
           }
         };
 
-        function nowMenu(menu){
-          $("subMenuTab .menu>li").eq(menu).addClass("active");
-        }
-
         $(".top_btn").click( function() {
         $("html, body").animate( { scrollTop : 0 }, 400 );
         return false;
@@ -214,10 +210,6 @@
          }
       }
 
-      var displayTab = function(number) {
-        $('nav#tab_' + number).css('display', 'block');
-      };
-
   </script>
 </head>
 
@@ -272,6 +264,7 @@
 
 <script>
 $(function(){
+
 $(".subContent nav").hide().eq(0).show();
 $(".subMenuTab li").click(function(){
   var i = $(this).index();
@@ -289,6 +282,10 @@ $(".subMenuTab li").click(function(){
     $(".loc_dep2,.visionTop>p").html("Klarwind 700");
   }
   });
+  $('.subMenuTab li').on('click', function(){
+    $('.subMenuTab li').removeClass('selected');
+    $(this).addClass('selected');
+  });
 });
 $(document).ready(function() {
   $(".accordionTxt").hide();
@@ -297,6 +294,8 @@ $(document).ready(function() {
   {
     $(this).next(".accordionTxt").slideToggle(500);
   });
+
+
   $(window).scroll(function () {
    if ($(this).scrollTop() > 500) {
      $('#backToTop').fadeIn(500);
@@ -323,10 +322,10 @@ $(document).ready(function() {
   <div class="subMenuTab">
     <ul class="tabtitle">
       <li>KLARWIND 100</li>
-      <li onClick="displayTab(1)">KLARWIND 300</li>
-      <li onClick="displayTab(2)">KLARWIND 500</li>
-      <li onClick="displayTab(3)">KLARWIND 500S</li>
-      <li onClick="displayTab(4)">KLARWIND 700</li>
+      <li>KLARWIND 300</li>
+      <li>KLARWIND 500</li>
+      <li>KLARWIND 500S</li>
+      <li>KLARWIND 700</li>
     </ul>
   </div>
   <div class="subCategory">

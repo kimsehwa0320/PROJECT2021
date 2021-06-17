@@ -1,5 +1,5 @@
 @charset "utf-8";
-.ProductSub_header
+.active
 
 h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 html{height: 100%;}
@@ -427,7 +427,7 @@ border-bottom: 1px solid #ccc;
   position: relative;max-width: 1400px; min-width: 992px;height: 300px;
   left: 50%;transform: translateX(-50%);
 }
-.subMenuTab .menu li.active{
+.subMenuTab li.selected{
     color:#52aff6;
 }
 .subMenuTab ul{position: absolute;left: 50%;transform: translateX(-50%);width: 100%;}
@@ -1367,7 +1367,7 @@ input[type=submit]:hover {
   background: #fff;
   margin-bottom: 0;
 }
-
+.subMenuTab .active{color:#52aff6;}
 .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
     padding-bottom: 5%;
 }
@@ -1393,9 +1393,7 @@ input[type=submit]:hover {
     border-color: transparent transparent transparent #3f3f3f;
 }
 .scroll{
-  position: absolute;left: 47%;transform: translateX(-50%);bottom: 360px;
-  /* position: absolute;
-  left: 50%;transform:translateX(-50%);  bottom: 20px;  */
+  position: absolute;left: 47%;transform: translateX(-50%);top:55%;
   animation-name:xScroll;
   animation-duration:0.8s;
   animation-iteration-count:infinite;
