@@ -989,12 +989,12 @@ border-bottom: 1px solid #ccc;
 .About_container{position: relative;width: 100%;height: 100%;left: 50%;transform: translateX(-50%);}
 .About_container .aboutContainer{position: absolute;left: 50%;transform: translateX(-50%);width: 100%;}
 .About_container .about_bg1{
-  display:flex;justify-content: center;align-items:center;
+  justify-content: center;align-items:center;
   background: #000;width: 50%;height: 1000px;
 }
 .About_container .aboutContainer1{
   position: absolute;left: 50%;transform: translateX(-50%);
-  width: 1800px;height: 1500px;
+  width: 1800px;height: 250px;
 }
 
 .About_container .aboutContainer1 li{float: left;}
@@ -1003,12 +1003,12 @@ border-bottom: 1px solid #ccc;
   justify-content: center;align-items:center;color:#fff;
 }
 .About_container .aboutContainer1 .abot_right1{
-  position: absolute;right: 0;width: 45%;top: 27%;
+  position: absolute;right: 0;width: 45%;top: 70%;
   justify-content: center;align-items:center;
 }
 .About_container .aboutContainer1 .abot_left1 h1{font-size: 110px;letter-spacing: -8px;padding-left: 14%;}
-.About_container .aboutContainer1 .abot_left1 p{font-size: 18px;padding: 2% 0 6% 0;line-height: 25px;}
-.About_container .aboutContainer1 .abot_left1 .left_p{ padding-top: 60%;text-align: right;position: absolute;}
+.About_container .aboutContainer1 .abot_left1 p{font-size: 18px;padding: 2% 0 4% 0;line-height: 30px;}
+.About_container .aboutContainer1 .abot_left1 .left_p{ padding-top: 57%;text-align: right;position: absolute;}
 .About_container .aboutContainer1 .abot_left1 img{width: 80%;position: absolute;left:20%;}
 
 .About_container .aboutContainer1 .abot_right1 img{width: 70%;position: absolute;left: 50%;transform: translateX(-50%);}
