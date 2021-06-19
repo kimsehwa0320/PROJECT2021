@@ -15,7 +15,8 @@
 	<link rel="stylesheet" href="../css/animate.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
-  <script src="js/sub_menu.js"></script>
+  <script src="js/jquery.easypiechart.js"></script>
+  <script src="js/jquery.easypiechart.min.js"></script>
 	<script src="js/wow.js"></script>
 	<script>
 		new WOW().init();
@@ -126,89 +127,44 @@
           $('.tab-cont').eq(index).css('display','block');
 
         });
+
+        $('.chart1').easyPieChart({
+          barColor: '#707070',
+          trackColor: 'rgba(255, 255, 255, 0.1)',
+          scaleColor: false,
+          lineCap: 'butt',
+          lineWidth: 35,
+          size: 240,
+          animate: 1000,
+          onStart: $.noop,
+          onStop: $.noop
+        });
+        $('.chart2').easyPieChart({
+          barColor: '#705a4c',
+          trackColor: 'rgba(255, 255, 255, 0.1)',
+          scaleColor: false,
+          lineCap: 'butt',
+          lineWidth: 35,
+          size: 240,
+          animate: 1000,
+          onStart: $.noop,
+          onStop: $.noop
+        });
+        $('.chart3').easyPieChart({
+          barColor: '#81ad54',
+          trackColor: 'rgba(255, 255, 255, 0.1)',
+          scaleColor: false,
+          lineCap: 'butt',
+          lineWidth: 35,
+          size: 240,
+          animate: 1000,
+          onStart: $.noop,
+          onStop: $.noop
+        });
+
+
       });
 
-      var piesiteFired = 0;
-      $(document).ready(function() {
-          var $win = $(window),
-              $win_height = $(window).height(),
-              // - A multiple of viewport height - The higher this number the sooner triggered.
-              windowPercentage = $(window).height() * 0.9;
-          $win.on("scroll", scrollReveal);
-          function scrollReveal() {
-              var scrolled = $win.scrollTop();
-
-      $(".piesite").each(function() {
-                 var $this = $(this),
-                     offsetTop = $this.offset().top;
-                 if (
-                     scrolled + windowPercentage > offsetTop ||
-                     $win_height > offsetTop
-                 ) {
-                     if (piesiteFired == 0) {
-                         timerSeconds = 3;
-                         timerFinish = new Date().getTime() + timerSeconds * 1000;
-                         $(".piesite").each(function(a) {
-                             pie = $("#pie_" + a).data("pie");
-                             timer = setInterval(
-                                 "stoppie(" + a + ", " + pie + ")",
-                                 0
-                             );
-                         });
-                         piesiteFired = 1;
-                     }
-                 } else {
-                     // To keep them triggered, lose this block.
-                     $(".piesite").each(function() {
-                         piesiteFired = 0;
-                     });
-                 }
-             });
-         }
-         scrollReveal();
-      });
-
-      var timer;
-      var timerFinish;
-      var timerSeconds;
-
-      function drawTimer(c, a) {
-         $("#pie_" + c).html(
-             '<div class="percent"></div><div id="slice"' +
-                 (a > 200 ? ' class="gt50"' : "") +
-                 '><div class="pie"></div>' +
-                 (a > 200 ? '<div class="pie fill"></div>' : "") +
-                 "</div>"
-         );
-         var b = 360 / 400 * a;
-         $("#pie_" + c + " #slice .pie").css({
-             "-moz-transform": "rotate(" + b + "deg)",
-             "-webkit-transform": "rotate(" + b + "deg)",
-             "-o-transform": "rotate(" + b + "deg)",
-             transform: "rotate(" + b + "deg)"
-         });
-         a = Math.floor(a * 400) / 400;
-         arr = a.toString().split(".");
-         intPart = arr[0];
-         $("#pie_" + c + " .percent").html(
-             '<span class="int">' +
-                 intPart +
-                 "</span>" +
-                 '<span class="symbol">%</span>'
-         );
-      }
-      function stoppie(d, b) {
-         var c = (timerFinish - new Date().getTime()) / 1000;
-         var a = 400 - c / timerSeconds * 400;
-         a = Math.floor(a * 400) / 400;
-         if (a <= b) {
-             drawTimer(d, a);
-         } else {
-             b = $("#pie_" + d).data("pie");
-             arr = b.toString().split(".");
-             $("#pie_" + d + " .percent .int").html(arr[0]);
-         }
-      }
 
   </script>
 </head>
@@ -288,7 +244,7 @@ $(".subMenuTab li").click(function(){
 });
 $(document).ready(function() {
   $(".accordionTxt").hide();
-  //content 클래스를 가진 div를 표시/숨김(토글)
+
   $(".heading").click(function()
   {
     $(this).next(".accordionTxt").slideToggle(500);
@@ -589,17 +545,17 @@ $(document).ready(function() {
                       <li class="design">
                           <h1 class="p4">SMOKE</h1>
                           <h5>max : 450</h5>
-                          <!-- <div class="piesite" id="pie_0" data-pie="276"></div> -->
+                          <div class="chart chart1" data-percent="63"><span class="title">276</span></div>
                       </li>
                       <li class="usability">
                           <h1 class="p4">DUST</h1>
                           <h5>max : 400</h5>
-                          <!-- <div class="piesite" id="pie_2" data-pie="304"></div> -->
+                          <div class="chart chart2" data-percent="71"><span class="title">304</span></div>
                       </li>
                       <li class="creativity">
                           <h1 class="p4">POLLEN</h1>
                           <h5>max : 450</h5>
-                          <!-- <div class="piesite" id="pie_1" data-pie="361"></div> -->
+                          <div class="chart chart3" data-percent="76"><span class="title">361</span></div>
                       </li>
                   </ul>
               </div>
@@ -714,7 +670,7 @@ $(document).ready(function() {
                 <h4 class="heading">Specifications<img src="images/down.png" alt="" class="down"></h4>
                   <div class="accordionTxt">
                     <li>· &nbsp;<span>Coverage(ft2):</span> 4ACH:933 2ACH:1867  <br></li>
-                    <li>· &nbsp;<span>AHAM Verified CADR (CFM) Smoke, Dust, Pollen:</span> 411, 396, 450<br></li>
+                    <li>· &nbsp;<span>AHAM Verified CADR (CFM) Smoke, Dust, Pollen:</span> 411, 397, 450<br></li>
                     <li>· &nbsp;<span>Air Quality Indicator:</span> Temp, Humidity & Fine-dust sensor(PM2.5)<br></li>
                     <li>· &nbsp;<span>Filter:</span> Washable Pre filter + Dust Collection(99.9%) + Activated Carbon<br></li>
                     <li>· &nbsp;<span>Fan Speed:</span> Auto + 5 Speed<br></li>
@@ -915,17 +871,17 @@ $(document).ready(function() {
                       <li class="design">
                           <h1 class="p4">SMOKE</h1>
                           <h5>max : 450</h5>
-                          <!-- <div class="piesite" id="pie_0" data-pie="276"></div> -->
+                          <div class="chart chart1" data-percent="90"><span class="title">411</span></div>
                       </li>
                       <li class="usability">
                           <h1 class="p4">DUST</h1>
                           <h5>max : 400</h5>
-                          <!-- <div class="piesite" id="pie_2" data-pie="304"></div> -->
+                          <div class="chart chart2" data-percent="97"><span class="title">397</span></div>
                       </li>
                       <li class="creativity">
                           <h1 class="p4">POLLEN</h1>
                           <h5>max : 450</h5>
-                          <!-- <div class="piesite" id="pie_1" data-pie="361"></div> -->
+                          <div class="chart chart3" data-percent="100"><span class="title">450</span></div>
                       </li>
                   </ul>
               </div>
@@ -1208,17 +1164,17 @@ $(document).ready(function() {
                     <li class="design">
                         <h1 class="p4">SMOKE</h1>
                         <h5>max : 450</h5>
-                        <!-- <div class="piesite" id="pie_0" data-pie="276"></div> -->
+                        <div class="chart chart1" data-percent="93"><span class="title">434</span></div>
                     </li>
                     <li class="usability">
                         <h1 class="p4">DUST</h1>
                         <h5>max : 400</h5>
-                        <!-- <div class="piesite" id="pie_2" data-pie="304"></div> -->
+                        <div class="chart chart2" data-percent="100"><span class="title">400</span></div>
                     </li>
                     <li class="creativity">
                         <h1 class="p4">POLLEN</h1>
                         <h5>max : 450</h5>
-                        <!-- <div class="piesite" id="pie_1" data-pie="361"></div> -->
+                        <div class="chart chart3" data-percent="100"><span class="title">450</span></div>
                     </li>
                 </ul>
             </div>
@@ -1555,17 +1511,17 @@ $(document).ready(function() {
                     <li class="design">
                         <h1 class="p4">SMOKE</h1>
                         <h5>max : 450</h5>
-                        <!-- <div class="piesite" id="pie_0" data-pie="276"></div> -->
+                        <div class="chart chart1" data-percent="100"><span class="title">450</span></div>
                     </li>
                     <li class="usability">
                         <h1 class="p4">DUST</h1>
                         <h5>max : 400</h5>
-                        <!-- <div class="piesite" id="pie_2" data-pie="304"></div> -->
+                        <div class="chart chart2" data-percent="100"><span class="title">400</span></div>
                     </li>
                     <li class="creativity">
                         <h1 class="p4">POLLEN</h1>
                         <h5>max : 450</h5>
-                        <!-- <div class="piesite" id="pie_1" data-pie="361"></div> -->
+                        <div class="chart chart3" data-percent="100"><span class="title">450</span></div>
                     </li>
                 </ul>
             </div>

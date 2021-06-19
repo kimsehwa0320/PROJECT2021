@@ -693,7 +693,7 @@ input[type=submit]:hover {
 .visualTxt1 p{letter-spacing: -0.5px;}
 
 /* accordionMenu */
-/* .accordion_container{margin-left: 39.3%;} */
+.accordion_container{margin: 0 auto;}
 .accordionContent{
   width: 100%;
   padding-top: 2%;height: 500px;
