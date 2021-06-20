@@ -1,5 +1,5 @@
 @charset "utf-8";
-.accordion_container
+.scrollTop
 
 h1{font-family: 'Noto Sans', sans-serif; font-weight: 700;}
 html{height: 100%;}
@@ -807,6 +807,7 @@ border-bottom: 1px solid #ccc;
   text-align: center;position: absolute;width: 100%;left: 50%;transform: translateX(-50%);
   font-size: 62px;font-weight: bold;top: 50%;
 }
+.chart4,.chart5,.chart6{display: none;}
 
 .k300Sub_10{width: 100%;height: 1000px;}
 .k300Sub_10 .spec_bg{width: 100vw;height: 1000px;background: #000;position: absolute;left: 50%;transform: translateX(-50%);}
